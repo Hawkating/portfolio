@@ -1,0 +1,36 @@
+
+    @for (item of contentForCard; track $index) {
+    <div class="card-container">
+        <div class="headline">
+            <h1>{{item.number}}</h1>
+            <h2>Project {{item.name}}</h2>
+        </div>
+        <div class="card-content">
+            <div class="first-line">
+                <ul class="about list">
+                    <li>About the Project</li>
+                    <br>
+                    <p class="help-resize">{{contentForCard[0].about}}</p>
+                    <br><br>
+                    <li>Technologies I have used </li>
+                    <br>
+                    <p class="help-resize">{{item.technologies}}</p>
+                    <br><br>
+                    <li>What I have learned </li>
+                    <br>
+                    <p class="technologies">{{item.learning}}</p>
+                </ul>
+                <div class="info">
+                    <img src="../../assets/img/laptop.jpg">
+                    <div class="links">
+                        <a href="{{item.github}}" target="_blank">GitHub</a>
+                        <a href="{{item.test}}" target="_blank">Live Test</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+}
+

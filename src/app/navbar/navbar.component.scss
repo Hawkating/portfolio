@@ -1,0 +1,43 @@
+@import '../../styles.scss';
+
+nav {
+    height: 100vh;
+    width: 172px;
+    margin: 0;
+    position: fixed;
+    left: 0;
+    z-index: 100;
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    img {
+        width: 130px;
+        height: 103px;
+    }
+
+    .links-area {
+        display: flex;
+        flex-direction: row-reverse;
+        transform: rotate(270deg);
+        position: fixed;
+        top: 50%;
+        gap: 28px;
+
+        a {
+            color: #4A4A4A;
+            font-size: 30px;
+            font-weight: 400px;
+            text-decoration: none;
+            transition: color 0.15s ease;
+
+            &:hover {
+                cursor: pointer;
+                color: white;
+            }
+        }
+
+    }
+}

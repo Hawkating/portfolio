@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+$primary-color: #B5E93B;
+
+@font-face {
+    font-family: 'quantico';
+    src: url('./assets/fonts/Quantico-Regular.ttf');
+}
+@font-face {
+    font-family: 'quantico-bold';
+    src: url('./assets/fonts/Quantico-Bold.ttf');
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
+
+*{
+    margin: 0;
+    font-family: 'quantico';
+    scroll-behavior: smooth;
+}

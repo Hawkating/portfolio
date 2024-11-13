@@ -1,0 +1,25 @@
+.arrow-blurr {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.arrow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    
+    .arrow {
+        margin-top: -46px;
+    }
+
+    &:hover .arrow-blurr {
+        opacity: 1 !important;
+    }
+
+}
+
+.arrow-container:hover {
+    cursor: pointer;
+}

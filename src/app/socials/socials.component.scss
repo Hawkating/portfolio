@@ -1,0 +1,47 @@
+@import '../../styles.scss';
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 32px;
+    padding-top: 52px;
+    gap: 48px;
+    position: fixed;
+    top: 8px;
+    right: 24px;
+}
+
+#socials-bar {
+    gap: 16px;
+    display: flex;
+
+    img{
+        &:hover{
+            cursor: pointer;
+     }
+    }
+}
+
+.language-switch {
+    display: flex;
+    gap: 8px;
+    color: white;
+
+    .choose{
+        font-family: 'roboto' !important;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .language {
+        font-family: 'roboto' !important;
+        font-size: 18px;
+        font-weight: 700;
+
+        &:hover {
+            color: $primary-color;
+            cursor: pointer;
+        }
+    }
+}
