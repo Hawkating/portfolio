@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { ArrowComponent } from '../arrow/arrow.component';
 
 @Component({
@@ -11,5 +11,10 @@ import { ArrowComponent } from '../arrow/arrow.component';
 export class WhymeComponent {
   navigateTo:string = 'skills';
 
+  @Output()showPage = new EventEmitter();
+
+  emitShowPage(){
+   this.showPage.emit(this.navigateTo);
+  }
 
 }

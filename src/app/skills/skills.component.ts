@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { ArrowComponent } from "../arrow/arrow.component";
 
 @Component({
@@ -55,6 +55,12 @@ export class SkillsComponent {
   navigateTo:string = 'mywork';
 
   constructor() {
+  }
+
+  @Output()showPage = new EventEmitter();
+
+  emitShowPage(){
+   this.showPage.emit(this.navigateTo);
   }
 
 

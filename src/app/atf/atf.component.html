@@ -1,5 +1,5 @@
 <section>
-<app-arrow [navigateTo]="navigateTo" class="navigation"></app-arrow>
+<app-arrow (click)="emitShowPage()" [navigateTo]="navigateTo" class="navigation"></app-arrow>
     <div class="profile-container">
         <div class="headlines">
             <h1>Jan Bruchwalski</h1>

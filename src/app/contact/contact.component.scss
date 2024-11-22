@@ -1,0 +1,157 @@
+@import '../../styles.scss';
+
+section {
+    height: 100vh;
+    width: 100vw;
+    background-size: 400vw 100vh;
+    background-image: linear-gradient(100deg, #010101, #252525, #252525, #010101);
+    background-position: -200vw 0;
+
+    .content {
+        margin-left: 180px;
+        margin-right: 40px;
+        padding-top: 10%;
+        top: 25%;
+        display: flex;
+        align-items: start;
+        color: white;
+    }
+
+    h1 {
+        font-family: 'quantico-bold';
+        font-size: 54px;
+        font-weight: 400;
+        color: transparent;
+        -webkit-text-stroke-width: 2.0px;
+        -webkit-text-stroke-color: $primary-color;
+        writing-mode: vertical-lr;
+        rotate: 180deg;
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .input-field {
+            width: 456px;
+            height: 60px;
+            border: 1px solid $primary-color;
+            border-radius: 30px;
+            background-color: transparent;
+            padding-left: 24px;
+            color: white;
+            outline: none;
+        }
+
+
+        textarea {
+            width: 456px;
+            height: 255px;
+            resize: none;
+            border: 1px solid $primary-color;
+            border-radius: 30px;
+            background-color: transparent;
+            padding-left: 24px;
+            padding-top: 12px;
+            color: white;
+            outline: none;
+        }
+
+        ::placeholder {
+            color: #D3ED97;
+            opacity: 1;
+        }
+
+        .agreement {
+            display: flex;
+            width: 456px;
+            height: 80px;
+            color: $primary-color;
+
+            a {
+                color: white
+            }
+
+            a:hover {
+
+                cursor: pointer;
+            }
+
+
+        }
+
+
+
+        .checkbox {
+            all: unset;
+            height: 18px;
+            min-width: 18px;
+            background-color: transparent;
+            border: 2px solid white;
+            position: relative;
+            border-radius: 3px;
+            display: flex;
+            text-align: center;
+            padding-bottom: 2px;
+            margin-right: 24px;
+        }
+
+        .checkbox:hover {
+            cursor: pointer;
+        }
+
+        .checkbox:hover:not(:checked):after {
+            height: 12px;
+            width: 12px;
+            background-color: $primary-color;
+            content: "";
+            color: $primary-color;
+            position: relative;
+            top: 20%;
+            left: 15%;
+            opacity: 0.5;
+            filter: blur(2px);
+        }
+
+        .checkbox:checked {
+            border: 2px solid $primary-color;
+        }
+
+        .checkbox:checked::after {
+            height: 18px;
+            width: 18px;
+            content: "✔";
+            color: $primary-color;
+        }
+
+        button {
+            all: unset;
+            background-color: $primary-color;
+            width: 94px;
+            height: 43px;
+            color: #4A4A4A;
+            border-radius: 30px;
+            text-align: center;
+            float: right;
+        }
+
+        button:disabled {
+            background-color: #9e9d9d;
+        }
+
+    }
+
+    .work-together {
+text-align: end;
+        span {
+
+        }
+
+        p {
+
+        }
+    }
+}

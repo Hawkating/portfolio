@@ -1,0 +1,10 @@
+@import '../../styles.scss';
+
+.right-bar{
+    width: 100px;
+    height: 100vh;
+    background-color: $primary-color;
+    position: fixed;
+    right: 0;
+    margin-left: 24px !important;
+}

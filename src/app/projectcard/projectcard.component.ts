@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, SimpleChanges  } from '@angular/core';
 
 @Component({
   selector: 'app-projectcard',
@@ -20,21 +20,37 @@ export class ProjectcardComponent {
       github: 'http://www.google.de',
       test: 'https://join-327.developerakademie.net/login.html'
     },
-    // {
-    //   number: 1,
-    //   name: 'Join',
-    //   about: 'blablatest',
-    //   technologies: '',
-    //   learning: '',
-    //   image: '',
-    //   github: '',
-    //   test: ''
-    // },
+    {
+      number: 2,
+      name: 'El Pollo Loco',
+      about: 'blablapollo',
+      technologies: 'HTML, CSS, JavaScript',
+      learning: 'OOP',
+      image: '',
+      github: '',
+      test: ''
+    },
+    {
+      number: 3,
+      name: 'Testprojekt',
+      about: 'blablapoasldkjajklsfckllo',
+      technologies: 'HTML, CSS, JavaScript',
+      learning: 'OOP',
+      image: '',
+      github: '',
+      test: ''
+    },
   ];
+  @Input()indexOfItem:number = 0;
+  item: Card = this.contentForCard[this.indexOfItem];
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['indexOfItem'] && this.indexOfItem >= 0 && this.indexOfItem < this.contentForCard.length) {
+      this.item = this.contentForCard[this.indexOfItem];
+    }
 
 }
-
+}
 
 class Card {
   number: number = 0;

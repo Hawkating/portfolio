@@ -1,9 +1,10 @@
 <section>
-    <app-arrow [navigateTo]="navigateTo" class="navigation"></app-arrow>
-<div class="content">
+    <app-arrow (click)="emitShowPage()" [navigateTo]="navigateTo" class="navigation"></app-arrow>
+    <div class="content">
         <h1>My Skill Set</h1>
         <div class="container">
-            <p class="description">The IT landscape is continuously evolving, with new technologies and methodologies. Staying motivated to
+            <p class="description">The IT landscape is continuously evolving, with new technologies and methodologies.
+                Staying motivated to
                 expand my IT skills requires a strategic approach, a curious mindset, and a commitment to lifelong
                 learning.</p>
             <div class="skill-container">

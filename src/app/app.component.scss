@@ -1,6 +1,22 @@
+
 .content{
     display: flex;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    // scroll-snap-type: x mandatory;
+    // scroll-behavior: smooth;
 }
+
+.component {
+    flex: 0 0 100vw;
+    height: 100vh;
+    // scroll-snap-align: center; 
+    scroll-snap-stop: always;
+    // scroll-behavior: smooth;
+}
+
+.d-none{
+    display: none;
+}
+

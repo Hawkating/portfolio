@@ -1,11 +1,15 @@
-<app-navbar></app-navbar>
+<app-navbar (showPage)="showPage($event)"></app-navbar>
 <app-socials></app-socials>
 <div class="content">
-    <app-mywork id="mywork"></app-mywork>
-    <app-atf id="atf"></app-atf>
-    <app-whyme id="whyme"></app-whyme>
-    <app-skills id="skills"></app-skills> 
+    <app-contact (showPage)="showPage($event)" id="contact" class="component"></app-contact>
+    <app-atf (showPage)="showPage($event)" id="atf" class="component"></app-atf>
+    <app-whyme (showPage)="showPage($event)" id="whyme" class="component d-none"></app-whyme>
+    <app-skills (showPage)="showPage($event)" id="skills" class="component d-none"></app-skills>
+    <app-mywork (showPage)="showPage($event)" id="mywork" class="component d-none"></app-mywork>
+
+
 
 </div>
 <!-- <router-outlet></router-outlet> -->
+
 

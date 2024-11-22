@@ -1,4 +1,14 @@
 <section>
-
-    <app-projectcard></app-projectcard>
+    <app-arrow (click)="emitShowPage()" class="navigation" [navigateTo]="navigateTo"></app-arrow>
+    <div class="content">
+        <h1>My Work</h1>
+        <div class="project-container">
+            <app-projectcard [indexOfItem]="projectIndex" class="programm"></app-projectcard>
+            <div class="preview-container">
+                <app-projectcard (click)="projectIndex = 0" [indexOfItem]="0" class="preview"></app-projectcard>
+                <app-projectcard (click)="projectIndex = 1" [indexOfItem]="1" class="preview"></app-projectcard>
+                <app-projectcard (click)="projectIndex = 2" [indexOfItem]="2" class="preview"></app-projectcard>
+            </div>
+        </div>
+    </div>
 </section>
