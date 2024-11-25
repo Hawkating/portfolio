@@ -38,6 +38,16 @@ nav {
                 color: white;
             }
         }
+    }
 
+    .current {
+        font-family: "quantico-bold";
+        color: transparent !important;
+        -webkit-text-stroke-width: 1.15px;
+        -webkit-text-stroke-color: #4A4A4A;
+
+        &:hover {
+            cursor: default !important;
+        }
     }
 }

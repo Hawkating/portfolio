@@ -1,19 +1,17 @@
 <section>
-    <app-right-bar></app-right-bar>
+    <app-right-bar class="d-none"></app-right-bar>
     <div class="content">
         <h1>Contact me</h1>
-        <form>
-            <input class="input-field" placeholder="Your name">
-
-            <input class="input-field" placeholder="Your e-mail">
-
-            <textarea placeholder="Your message"></textarea>
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <input [(ngModel)]="contactData.name" name="name" class="input-field" placeholder="Your name" required>
+            <input [(ngModel)]="contactData.mail" name="mail" class="input-field" placeholder="Your e-mail" required pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$">
+            <textarea [(ngModel)]="contactData.message" name="message" placeholder="Your message" required></textarea>
             <div class="agreement">
-                <input class="checkbox" type="checkbox">
+                <input class="checkbox" type="checkbox" [(ngModel)]="check" name="check" required>
                 <p>I've read the <a>privacy policy</a> and agree to the processing of my data as outlined.</p>
             </div>
             <div>
-                <button disabled>Send</button>
+                <button >Send</button>
             </div>
         </form>
         <div class="work-together">

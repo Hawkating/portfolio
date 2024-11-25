@@ -17,4 +17,8 @@ export class WhymeComponent {
    this.showPage.emit(this.navigateTo);
   }
 
+  emitShowPageContact(){
+    this.showPage.emit('contact');
+   }
+
 }
