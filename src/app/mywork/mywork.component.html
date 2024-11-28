@@ -5,9 +5,12 @@
         <div class="project-container">
             <app-projectcard [indexOfItem]="projectIndex" class="programm"></app-projectcard>
             <div class="preview-container">
-                <app-projectcard (click)="projectIndex = 0" [indexOfItem]="0" class="preview"></app-projectcard>
-                <app-projectcard (click)="projectIndex = 1" [indexOfItem]="1" class="preview"></app-projectcard>
-                <app-projectcard (click)="projectIndex = 2" [indexOfItem]="2" class="preview"></app-projectcard>
+                <!-- <app-projectcard-preview (click)="projectIndex = 0" [indexOfItem]="0" class="preview"></app-projectcard-preview>
+                <app-projectcard-preview (click)="projectIndex = 1" [indexOfItem]="1" class="preview"></app-projectcard-preview>
+                <app-projectcard-preview (click)="projectIndex = 2" [indexOfItem]="2" class="preview"></app-projectcard-preview> -->
+                <app-projectcard-preview (click)="projectIndex = 0" [projectname]="'Join'" [projectpath]="'../../assets/img/join.png'" class="preview"></app-projectcard-preview>
+                <app-projectcard-preview (click)="projectIndex = 1" [projectname]="'El Pollo Loco'" [projectpath]="'../../assets/img/polloloco.png'" class="preview"></app-projectcard-preview>
+                <app-projectcard-preview (click)="projectIndex = 2" [projectname]="'tba'" [projectpath]="'../../assets/img/tba.jpg'" class="preview"></app-projectcard-preview>
             </div>
         </div>
     </div>

@@ -2,17 +2,18 @@ import { Component, Output, EventEmitter, inject } from '@angular/core';
 import { RightBarComponent } from "../right-bar/right-bar.component";
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ArrowComponent } from '../arrow/arrow.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [RightBarComponent, FormsModule],
+  imports: [RightBarComponent, FormsModule, ArrowComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  navigateTo: string = 'atf'
-http = inject(HttpClient);
+  navigateTo: string = 'mywork'
+  http = inject(HttpClient);
 
   contactData = {
     name: '',

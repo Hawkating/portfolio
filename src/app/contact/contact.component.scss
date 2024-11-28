@@ -145,17 +145,33 @@ section {
     }
 
     .work-together {
-text-align: end;
-        span {
+        text-align: end;
+        margin-right: 100px;
 
-        }
+        span {}
 
-        p {
-
-        }
+        p {}
     }
 
-    .d-none{
+    .d-none {
         display: none;
     }
+}
+
+
+.navigation {
+    position: sticky;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: -60px;
+    transform: rotate(180deg);
+    margin-top: 32px;
+}
+
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
 }

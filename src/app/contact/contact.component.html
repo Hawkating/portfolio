@@ -4,14 +4,15 @@
         <h1>Contact me</h1>
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <input [(ngModel)]="contactData.name" name="name" class="input-field" placeholder="Your name" required>
-            <input [(ngModel)]="contactData.mail" name="mail" class="input-field" placeholder="Your e-mail" required pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$">
+            <input [(ngModel)]="contactData.mail" name="mail" class="input-field" placeholder="Your e-mail" required
+                pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$">
             <textarea [(ngModel)]="contactData.message" name="message" placeholder="Your message" required></textarea>
             <div class="agreement">
                 <input class="checkbox" type="checkbox" [(ngModel)]="check" name="check" required>
                 <p>I've read the <a>privacy policy</a> and agree to the processing of my data as outlined.</p>
             </div>
             <div>
-                <button >Send</button>
+                <button>Send</button>
             </div>
         </form>
         <div class="work-together">
@@ -24,9 +25,16 @@
                 I have the technical acumen and problem-solving skills to ensure successful outcomes.</p>
             <br>
             <br>
-            <div><img><span>E-Mail: <a>j.bruchwalski&#64;web.de</a></span></div>
-            <div><img><span>Tel: <a>0160 / 7534434</a></span></div>
-
+            <div class="contact"><img src="../../assets/icons/mail.svg"><span> E-Mail:
+                    <a>j.bruchwalski&#64;web.de</a></span></div>
+            <div class="contact"><img src="../../assets/icons/phone.svg"><span> Tel: <a>0160 / 7534434</a></span></div>
+            <app-arrow (click)="emitShowPage()" class="navigation" [navigateTo]="navigateTo"></app-arrow>
+            <br><br>
+            <a>legal notice</a>
+            <br><br>
+            <a>privacy policy</a>
+            <br><br>
+            <p>© Jan Bruchwalski 2024</p>
         </div>
 
     </div>

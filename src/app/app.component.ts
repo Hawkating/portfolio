@@ -10,11 +10,12 @@ import { SkillsComponent } from './skills/skills.component';
 import { MyworkComponent } from "./mywork/mywork.component";
 import { ProjectcardComponent } from "./projectcard/projectcard.component";
 import { ContactComponent } from "./contact/contact.component";
+import { RightBarComponent } from './right-bar/right-bar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent, RightBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -83,6 +84,16 @@ export class AppComponent {
   
     // Aktualisiere die aktuelle Seite
     this.oldPage = page;
+    if(this.currentPage == 'contact'){
+      setTimeout(() => {
+        document.getElementById('socials-bar')?.classList.add('d-none');
+        document.getElementById('right-bar')?.classList.remove('d-none');
+      }, 1000);
+
+    } else {
+      document.getElementById('socials-bar')?.classList.remove('d-none');
+      document.getElementById('right-bar')?.classList.add('d-none');
+    }
   }
   
 

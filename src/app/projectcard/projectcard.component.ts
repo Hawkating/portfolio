@@ -16,7 +16,7 @@ export class ProjectcardComponent {
       about: 'blablatest',
       technologies: 'HTML, CSS, JavaScript, Firebase, GIT',
       learning: 'asfafsdcvklö dfkjdsöfjäfd sdfkävköskvlsdv yxcvvasdddddddddddddddddddddddd dddddddddddddddddddddddddddddddddd sdfdsfsdfsdfsdf sdfsadfcvsdv',
-      image: '',
+      image: '../../assets/img/join.png',
       github: 'http://www.google.de',
       test: 'https://join-327.developerakademie.net/login.html'
     },
@@ -26,7 +26,7 @@ export class ProjectcardComponent {
       about: 'blablapollo',
       technologies: 'HTML, CSS, JavaScript',
       learning: 'OOP',
-      image: '',
+      image: '../../assets/img/polloloco.png',
       github: '',
       test: ''
     },
@@ -36,7 +36,7 @@ export class ProjectcardComponent {
       about: 'blablapoasldkjajklsfckllo',
       technologies: 'HTML, CSS, JavaScript',
       learning: 'OOP',
-      image: '',
+      image: '../../assets/img/tba.jpg',
       github: '',
       test: ''
     },
