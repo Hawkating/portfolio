@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { ArrowComponent } from "../arrow/arrow.component";
 
 @Component({
@@ -53,7 +53,13 @@ export class SkillsComponent {
     },
   ];
   navigateTo:string = 'mywork';
-
+  @Input() set animationObserver(value: string) {
+    if (value == 'skills') {
+      this.observeAnimation();
+    } else {
+      this.observeAnimationDelete();
+    }
+  }
   constructor() {
   }
 
@@ -63,6 +69,21 @@ export class SkillsComponent {
    this.showPage.emit(this.navigateTo);
   }
 
+  observeAnimation(){
+    const elements = Array.from(document.getElementsByClassName('single-skill'));
+
+    elements.forEach((element) => {
+        element.classList.add('start-animation');
+    });
+  }
+
+  observeAnimationDelete(){
+    const elements = Array.from(document.getElementsByClassName('single-skill'));
+
+    elements.forEach((element) => {
+        element.classList.remove('start-animation');
+    });
+  }
 
 
 }

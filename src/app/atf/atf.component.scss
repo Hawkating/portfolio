@@ -1,17 +1,25 @@
 @import '../../styles.scss';
 
 section {
-    background-color: #010101;
+    background-size: 500vw 100vh;
+    background-image: linear-gradient(100deg, #010101, #010101, #252525, #252525, #010101);
+    background-position: 0vw 0;
     height: 100vh;
     width: 100vw;
 
-
-    .navigation{
+        .navigation{
         position: sticky;
         top: 30%;
         right: 30% !important;
         display: flex;
         justify-content: flex-end;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
     }
 
     .headlines {
@@ -21,7 +29,7 @@ section {
         align-items: end;
         z-index: 1;
         position: sticky;
-        margin-top: 50vh;
+        bottom: 100px;
 
         .headline-name{
             overflow: hidden;
@@ -61,19 +69,4 @@ section {
           }
     }
 
-    .profile-container {
-        margin-left: 172px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .profile-pic {
-            height: 600px;
-            position: sticky;
-            bottom: 0;
-            margin: 0;
-
-        }
-    }
 }

@@ -1,10 +1,12 @@
 @import '../../styles.scss';
 
 section {
+    background-size: 500vw 100vh;
+    background-image: linear-gradient(100deg, #010101, #010101, #252525, #252525, #010101);
+    background-position: -100vw 0;
     height: 100vh;
     width: 100vw;
-    background-size: 400vw 100vh;
-    background-image: linear-gradient(100deg, #010101, #252525, #252525, #010101);
+
 
     .navigation {
         position: sticky;
@@ -53,105 +55,137 @@ section {
         align-items: center;
         justify-content: center;
         gap: 70px;
-    }
 
-    .located {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
 
-        &:hover #ellipse {
-            opacity: 1;
-        }
-
-        &:hover p {
-            color: $primary-color;
-        }
-
-        #ellipse {
+        .start-animation {
             opacity: 0;
-            transition: opacity 0.15s ease;
-        }
+            transform: scale(0.8);
+            animation: fadeInScale 0.5s ease-out forwards;
+            animation-fill-mode: forwards;
 
-        p {
-            margin-top: 5px;
-        }
-
-    }
-
-    .remote {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-
-        &:hover #remote-active {
-            opacity: 1;
-        }
-
-        #remote-active {
-            margin-top: -46px;
-            margin-left: -30px;
-            opacity: 0;
-            transition: opacity 0.15s ease;
-        }
-
-        &:hover p {
-            color: $primary-color;
-        }
-
-        p {
-            margin-top: 30px;
+            &.located {
+                animation-delay: 0.5s;
+            }
+    
+            &.remote {
+                animation-delay: 0.75s;
+            }
+    
+            &.communication {
+                animation-delay: 1s;
+            }
         }
     }
+        .located {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
 
-    .communication {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
+            &:hover #ellipse {
+                opacity: 1;
+            }
 
-        img {
-            height: 50px;
+            &:hover p {
+                color: $primary-color;
+            }
+
+            #ellipse {
+                opacity: 0;
+                transition: opacity 0.15s ease;
+            }
+
+            p {
+                margin-top: 5px;
+            }
+
         }
 
-        #communication-active {
-            opacity: 0;
-            margin-top: -50px;
-            transition: opacity 0.15s ease;
+        .remote {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+
+
+            &:hover #remote-active {
+                opacity: 1;
+            }
+
+            #remote-active {
+                margin-top: -46px;
+                margin-left: -30px;
+                opacity: 0;
+                transition: opacity 0.15s ease;
+            }
+
+            &:hover p {
+                color: $primary-color;
+            }
+
+            p {
+                margin-top: 30px;
+            }
         }
 
-        &:hover p {
-            color: $primary-color;
+        .communication {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+
+            img {
+                height: 50px;
+            }
+
+            #communication-active {
+                opacity: 0;
+                margin-top: -50px;
+                transition: opacity 0.15s ease;
+            }
+
+            &:hover p {
+                color: $primary-color;
+            }
+
+            &:hover #communication-active {
+                opacity: 1;
+            }
         }
 
-        &:hover #communication-active {
-            opacity: 1;
+        button {
+            float: right;
+            margin-top: 100px;
+            margin-right: 40px;
+            width: 135px;
+            height: 43px;
+            background-color: $primary-color;
+            border-radius: 30px;
+            padding-inline: 0px;
+            border-width: 0px;
+            padding-block: 0px;
+            border-style: initial;
         }
+
+        button:hover {
+            cursor: pointer;
+            filter: brightness(1.1);
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+
     }
-
-    button {
-        float: right;
-        margin-top: 100px;
-        margin-right: 40px;
-        width: 135px;
-        height: 43px;
-        background-color: $primary-color;
-        border-radius: 30px;
-        padding-inline: 0px;
-        border-width: 0px;
-        padding-block: 0px;
-        border-style: initial;
-    }
-
-    button:hover {
-        cursor: pointer;
-        filter: brightness(1.1);
-    }
-
-
-}

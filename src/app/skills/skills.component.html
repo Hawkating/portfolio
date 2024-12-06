@@ -9,7 +9,7 @@
                 learning.</p>
             <div class="skill-container">
                 @for (skill of skillsFrontend; track skill.name) {
-                <div class="single-skill">
+                <div class="single-skill" [ngStyle]="{'animation-delay': ($index * 0.1) + 's'}">
                     <img src={{skill.path}}>
                     <div class="glow">
                     </div>

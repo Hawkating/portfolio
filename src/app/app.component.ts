@@ -73,16 +73,13 @@ export class AppComponent {
     let indexTargetPage = this.pages.indexOf(page);
     let indexCurrentPage = this.pages.indexOf(this.oldPage);
   
-    // Differenz der Seiten berechnen
     const offset = indexTargetPage * -100; // Jede Seite ist 100% breit
-  
-    // Setze die transform-Eigenschaft für das animierte Scrollen
     const pagesContainer = document.getElementById('pages-container');
     if (pagesContainer) {
       pagesContainer.style.transform = `translateX(${offset}%)`;
     }
   
-    // Aktualisiere die aktuelle Seite
+
     this.oldPage = page;
     if(this.currentPage == 'contact'){
       setTimeout(() => {
@@ -106,6 +103,7 @@ export class AppComponent {
       }
     }, 500)
   }
+
 
 }
 

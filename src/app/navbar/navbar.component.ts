@@ -28,14 +28,16 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 export class NavbarComponent {
   @Output() showPage = new EventEmitter();
   private _currentPageNav = '';
+  whyme = {
+    en: 'Why me',
+    de: 'Why me'
+  }
 
   @Input()
   set currentPageNav(value: string) {
     this._currentPageNav = value;
     this.setHeadline();
   }
-
-
 
   emitShowPage(targetPage: string) {
     const pageObj = {

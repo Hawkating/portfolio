@@ -3,8 +3,6 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  // scroll-snap-type: x mandatory;
-  // scroll-behavior: smooth;
 }
 
 .component {
@@ -33,5 +31,21 @@
   flex: 0 0 100%;
   height: 100vh;
   display: block;
+}
+
+
+@media(max-width: 800px) {
+
+  #pages-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .content-wrapper {
+    overflow: auto;
+  }
+
 }
 

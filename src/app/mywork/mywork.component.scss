@@ -1,41 +1,22 @@
 @import '../../styles.scss';
 
 section {
+  background-size: 500vw 100vh;
+  background-image: linear-gradient(100deg, #010101, #010101, #252525, #252525, #010101);
+  background-position: -300vw 0;
   height: 100vh;
   width: 100vw;
-  background-size: 400vw 100vh;
-  background-image: linear-gradient(100deg, #010101, #252525, #252525, #010101);
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // height: 100vh;
-  // width: 100vw;
-  // background-size: 400vw 100vh;
-  // background-image: linear-gradient(100deg, #010101, #252525, #252525, #010101);
-  // background-position: -200vw 0;
-  // overflow-x: hidden;
-  
-//   .content {
-//     margin-left: 180px;
-//     margin-right: 40px;
-//     padding-top: 0;
-//     top: 15%;
-//     display: flex;
-//     align-items: start;
-//     color: white;
-// }
 
-.content {
-  margin-left: 180px;
-  margin-right: 40px;
-  padding-top: 10%;
-  // top: 25%;
-  display: flex;
-  align-items: start;
-}
 
-h1 {
+  .content {
+    margin-left: 180px;
+    margin-right: 40px;
+    padding-top: 10%;
+    display: flex;
+    align-items: start;
+  }
+
+  h1 {
     font-family: 'quantico-bold';
     font-size: 54px;
     font-weight: 400;
@@ -46,7 +27,7 @@ h1 {
     rotate: 180deg;
     margin-left: 32px;
     margin-right: 32px;
-}
+  }
 
   .project-container {
     display: flex;
@@ -82,6 +63,7 @@ h1 {
   }
 
 }
+
 
 .navigation {
   position: sticky;

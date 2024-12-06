@@ -1,23 +1,14 @@
-<!-- <app-navbar [currentPageNav]="currentPage" (showPage)="showPageViaNavbar($event)"></app-navbar>
-<app-socials></app-socials>
-<div class="content">
-    <app-atf (showPage)="showPage($event)" id="atf" class="component"></app-atf>
-    <app-whyme (showPage)="showPage($event)" id="whyme" class="component d-none"></app-whyme>
-    <app-skills (showPage)="showPage($event)" id="skills" class="component d-none"></app-skills>
-    <app-mywork (showPage)="showPage($event)" id="mywork" class="component d-none"></app-mywork>
-    <app-contact (showPage)="showPage($event)" id="contact" class="component d-none"></app-contact>
-</div> -->
-<!-- <router-outlet></router-outlet> -->
 <app-navbar [currentPageNav]="currentPage" (showPage)="showPageViaNavbar($event)"></app-navbar>
 <app-socials id="socials-bar" class="socials"></app-socials>
 <app-right-bar id="right-bar" class="d-none"></app-right-bar>
 <div class="content-wrapper">
-    <div id="pages-container">
-      <app-atf (showPage)="showPageViaArrow($event)" id="atf" class="component"></app-atf>
-      <app-whyme (showPage)="showPageViaArrow($event)" id="whyme" class="component"></app-whyme>
-      <app-skills (showPage)="showPageViaArrow($event)" id="skills" class="component"></app-skills>
-      <app-mywork (showPage)="showPageViaArrow($event)" id="mywork" class="component"></app-mywork>
-      <app-contact (showPage)="showPageViaArrow($event)" id="contact" class="component"></app-contact>
-    </div>
+  <div id="pages-container">
+    <app-atf (showPage)="showPageViaArrow($event)" id="atf" class="component"></app-atf>
+    <app-whyme (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="whyme"
+      class="component"></app-whyme>
+    <app-skills (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="skills"
+      class="component"></app-skills>
+    <app-mywork (showPage)="showPageViaArrow($event)" id="mywork" class="component"></app-mywork>
+    <app-contact (showPage)="showPageViaArrow($event)" id="contact" class="component"></app-contact>
   </div>
-
+</div>

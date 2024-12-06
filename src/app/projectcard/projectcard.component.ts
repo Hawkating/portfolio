@@ -13,9 +13,9 @@ export class ProjectcardComponent {
     {
       number: 1,
       name: 'Join',
-      about: 'blablatest',
+      about: 'This project was ',
       technologies: 'HTML, CSS, JavaScript, Firebase, GIT',
-      learning: 'asfafsdcvklö dfkjdsöfjäfd sdfkävköskvlsdv yxcvvasdddddddddddddddddddddddd dddddddddddddddddddddddddddddddddd sdfdsfsdfsdfsdf sdfsadfcvsdv',
+      learning: '',
       image: '../../assets/img/join.png',
       github: 'http://www.google.de',
       test: 'https://join-327.developerakademie.net/login.html'
