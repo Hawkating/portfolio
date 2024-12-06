@@ -1,5 +1,8 @@
-<div class="top-bar">
-    <div id="socials-bar">
+<div class="top-bar" [ngClass]="{
+    'fade-in': _currentPageNav !== 'contact',
+    'fade-out': _currentPageNav === 'contact'
+  }" [ngStyle]="{'animation-delay': _currentPageNav !== 'contact' ? '1s' : '0s'}">
+    <div id="socials-bar"   >
         <a href="mailto:j.bruchwalski@web.de"><img [src]="iconMailSrc" alt="Mail-Icon" (mouseenter)="onMouseEnter('mail')"
                 (mouseleave)="onMouseLeave('mail')"></a>
         <a href="https://linkedin.com/" target="_blank"><img [src]="iconLinkedinSrc" alt="LinkedIn-Icon" (mouseenter)="onMouseEnter('linkedin')"

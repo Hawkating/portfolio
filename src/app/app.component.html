@@ -1,6 +1,6 @@
 <app-navbar [currentPageNav]="currentPage" (showPage)="showPageViaNavbar($event)"></app-navbar>
-<app-socials id="socials-bar" class="socials"></app-socials>
-<app-right-bar id="right-bar" class="d-none"></app-right-bar>
+<app-socials [currentPageNav]="currentPage" id="socials-bar" class="socials"></app-socials>
+<app-right-bar [currentPageNav]="currentPage" id="right-bar" class="d-none"></app-right-bar>
 <div class="content-wrapper">
   <div id="pages-container">
     <app-atf (showPage)="showPageViaArrow($event)" id="atf" class="component"></app-atf>

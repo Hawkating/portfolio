@@ -27,42 +27,10 @@ export class AppComponent {
 
   showPageViaNavbar(page: { target: string; current: string }): void {
     this.currentPage = page.target;
-    // Greife auf target und current zu
-    console.log('Aktuelle Seite:', page.current);
-    console.log('Zielseite:', page.target);
-      // Setze die neue Seite oder führe eine Aktion aus
     this.showPage(page.target);
   }
 
-  // showPageViaArrow(page: string) {
-  //   // this.currentPage = current;
-  //   let indexTargetPage = this.pages.indexOf(page);
-  //   let indexCurrentPage = this.pages.indexOf(this.oldPage);
-  //   if (indexTargetPage > indexCurrentPage) {
-  //     for (let i = indexTargetPage - 1; i < this.pages.length; i++) {
-  //       document.getElementById(this.pages[i])?.classList.remove('d-none');
-  //     };
-  //     document.getElementById(page)?.scrollIntoView({
-  //       behavior: "smooth",  // Sanftes Scrollen
-  //       block: "start"       // Das Element wird am Anfang des Viewports ausgerichtet
-  //     });
-  //     document.getElementById(page)?.classList.remove('d-none');
-
-  //   } else if (indexTargetPage < indexCurrentPage) {
-  //     for (let i = indexCurrentPage - 1; i >= indexTargetPage; i--) {
-  //       document.getElementById(this.pages[i])?.classList.remove('d-none');
-  //     };
-  //     console.log("letzter if else block");
-  //     document.getElementById(page)?.scrollIntoView({
-  //       behavior: "smooth",  // Sanftes Scrollen
-  //       block: "start"       // Das Element wird am Anfang des Viewports ausgerichtet
-  //     });
-  //   }
-  //   this.oldPage = this.currentPage;
-  //   this.hidePages(page);
-
-  // }
-
+ 
   showPageViaArrow(page: string ): void {
     this.currentPage = page;
     console.log( this.currentPage)
@@ -73,7 +41,7 @@ export class AppComponent {
     let indexTargetPage = this.pages.indexOf(page);
     let indexCurrentPage = this.pages.indexOf(this.oldPage);
   
-    const offset = indexTargetPage * -100; // Jede Seite ist 100% breit
+    const offset = indexTargetPage * -100; 
     const pagesContainer = document.getElementById('pages-container');
     if (pagesContainer) {
       pagesContainer.style.transform = `translateX(${offset}%)`;
@@ -83,13 +51,14 @@ export class AppComponent {
     this.oldPage = page;
     if(this.currentPage == 'contact'){
       setTimeout(() => {
-        document.getElementById('socials-bar')?.classList.add('d-none');
         document.getElementById('right-bar')?.classList.remove('d-none');
       }, 1000);
 
     } else {
-      document.getElementById('socials-bar')?.classList.remove('d-none');
+      setTimeout(() => {
       document.getElementById('right-bar')?.classList.add('d-none');
+      },1000)
+
     }
   }
   

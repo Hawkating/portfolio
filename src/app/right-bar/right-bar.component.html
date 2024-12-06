@@ -1,1 +1,5 @@
-<div class="right-bar"></div>
+<div class="right-bar" [ngClass]="{
+    'fade-out': _currentPageNav !== 'contact',
+    'fade-in': _currentPageNav === 'contact'
+  }">
+  </div>

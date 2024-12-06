@@ -8,5 +8,38 @@
     right: 0;
     margin-left: 24px !important;
     z-index: 200;
+    opacity: 0;
+
+    &.fade-in{
+        animation: fadeIn 1s ease-out forwards;
+    }
+
+    &.fade-out{
+        animation: fadeOut 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 0;
+        }
+    }
+    
 }
+
+
 

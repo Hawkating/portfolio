@@ -11,25 +11,58 @@
     top: 8px;
     right: 24px;
     z-index: 200;
+
+    &.fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+    }
+
+    &.fade-out {
+        animation: fadeOut 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 0;
+        }
+    }
 }
 
 #socials-bar {
     gap: 16px;
     display: flex;
+    opacity: 1;
 
-    img{
-        &:hover{
+    img {
+        &:hover {
             cursor: pointer;
-     }
+        }
     }
+
 }
+
 
 .language-switch {
     display: flex;
     gap: 8px;
     color: white;
 
-    .choose{
+    .choose {
         font-family: 'roboto' !important;
         font-size: 18px;
         font-weight: 700;
@@ -46,4 +79,4 @@
         }
     }
 
-    }
+}
