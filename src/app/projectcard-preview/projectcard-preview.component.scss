@@ -22,5 +22,18 @@
         border-radius: 10px;
     }
 
+}
 
+@media(max-width: 1040px) {
+    img{
+display: none;
+    }
+.container{
+    height: 0px !important;
+    width: 80px;
+}
+
+h1{
+    font-size: 16px;
+}
 }

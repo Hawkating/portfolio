@@ -3,7 +3,7 @@
     <div class="content">
         <h1>My Work</h1>
         <div class="project-container">
-            <app-projectcard [indexOfItem]="projectIndex" class="programm"></app-projectcard>
+            <app-projectcard id="project-container" [indexOfItem]="projectIndex" class="programm"></app-projectcard>
             <div class="preview-container">
                 <app-projectcard-preview (click)="projectIndex = 0" [projectname]="'Join'" [projectpath]="'../../assets/img/join.png'" class="preview"></app-projectcard-preview>
                 <app-projectcard-preview (click)="projectIndex = 1" [projectname]="'El Pollo Loco'" [projectpath]="'../../assets/img/polloloco.png'" class="preview"></app-projectcard-preview>

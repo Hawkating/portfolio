@@ -34,7 +34,7 @@ section {
     align-items: center;
   }
 
-  .programm {}
+
 
   .preview-container {
     padding-top: 16px;
@@ -52,8 +52,6 @@ section {
   }
 
   .preview {
-    // transform-origin: top left;
-    // width: 380px;
     transition: filter 0.5s ease;
 
     &:hover {
@@ -61,6 +59,104 @@ section {
       filter: brightness(1.2);
     }
   }
+
+
+  @media(max-width: 1600px){
+    .project-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .preview-container {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      gap: 8px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: start;
+      height: 80%;
+      width: 700px;
+      border-radius: 30px;
+      border: solid 2px $primary-color;
+      margin-left: 0;
+    }
+
+  }
+  
+
+  
+  @media (max-width: 800px){
+    background-size: 100vh 500vw;
+    background-image: linear-gradient(190deg, #010101, #252525, #252525, #010101); 
+    background-position: 0 -300vh;
+
+    .content {
+      margin-left: 24px;
+      margin-right: 24px;
+      padding-top: 0px;
+      top: 0%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  h1 {
+      font-family: 'quantico-bold';
+      font-size: 32px;
+      font-weight: 400;
+      color: transparent;
+      -webkit-text-stroke-width: 2.0px;
+      -webkit-text-stroke-color: $primary-color;
+      writing-mode:horizontal-tb ;
+      rotate: 0deg;
+      margin-left: 0px;
+      margin-right: 0px;
+      position: relative;
+      top: 0px;
+  }
+
+  .navigation{
+      display: none;
+  }
+  }
+
+  @media(max-width: 1040px){
+    .preview-container {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      gap: 8px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 80%;
+      width: 450px;
+      border-radius: 30px;
+      border: solid 2px $primary-color;
+      margin-left: 0;
+    }
+  }
+
+
+  
+  .start-animation{
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
 
 }
 
@@ -72,3 +168,4 @@ section {
   top: 90%;
   right: 0 !important;
 }
+

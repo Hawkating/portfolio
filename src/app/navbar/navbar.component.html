@@ -1,23 +1,15 @@
-<!-- <nav>
-    <a href="#atf">
-        <img src="../../assets/img/testlogo.png">
-    </a>
-    <div class="links-area">
-        <a href="#whyme">Why&nbsp;me</a>
-        <a href="#skills">Skills</a>
-        <a href="#mywork">My&nbsp;Work</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav> -->
-
 <nav>
-    <a  (click)="emitShowPage('atf')">
-        <img src="../../assets/img/Logo.png">
-    </a>
+   <a class="home" (click)="emitShowPage('atf')">
+            <img src="../../assets/img/Logo.png">
+        </a>
+        <a class="burger" (click)="emitOpenBurgerMenu()">
+            <img src="../../assets/icons/burger-menu.svg">
+        </a>
+
     <div class="links-area">
-        <a id="whyme" (click)="emitShowPage('whyme')" class="no-wrap">{{ whyme.de }}</a>
-        <a id="skills" (click)="emitShowPage('skills')">Skills</a>
-        <a id="mywork" (click)="emitShowPage('mywork')">My&nbsp;Work</a>
-        <a id="contact" (click)="emitShowPage('contact')">Contact</a>
+        <a id="whyme-nav" (click)="emitShowPage('whyme')" class="no-wrap">{{ whyme.de }}</a>
+        <a id="skills-nav" (click)="emitShowPage('skills')">Skills</a>
+        <a id="mywork-nav" (click)="emitShowPage('mywork')">My&nbsp;Work</a>
+        <a id="contact-nav" (click)="emitShowPage('contact')">Contact</a>
     </div>
 </nav>

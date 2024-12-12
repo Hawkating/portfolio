@@ -24,44 +24,50 @@ export class AppComponent {
   pages: string[] = ['atf', 'whyme', 'skills', 'mywork', 'contact'];
   oldPage: string = 'atf'
   currentPage: string = 'atf';
+  burgerOpen = false;
 
   showPageViaNavbar(page: { target: string; current: string }): void {
     this.currentPage = page.target;
     this.showPage(page.target);
+
   }
 
- 
-  showPageViaArrow(page: string ): void {
+
+  showPageViaArrow(page: string): void {
     this.currentPage = page;
-    console.log( this.currentPage)
+    console.log(this.currentPage)
     this.showPage(page);
   }
 
   showPage(page: string) {
-    let indexTargetPage = this.pages.indexOf(page);
-    let indexCurrentPage = this.pages.indexOf(this.oldPage);
-  
-    const offset = indexTargetPage * -100; 
-    const pagesContainer = document.getElementById('pages-container');
-    if (pagesContainer) {
-      pagesContainer.style.transform = `translateX(${offset}%)`;
-    }
-  
-
-    this.oldPage = page;
-    if(this.currentPage == 'contact'){
-      setTimeout(() => {
-        document.getElementById('right-bar')?.classList.remove('d-none');
-      }, 1000);
-
+    if (window.innerWidth < 800) {
+      let element = document.getElementById('atf');
+      element?.scrollIntoView();
     } else {
-      setTimeout(() => {
-      document.getElementById('right-bar')?.classList.add('d-none');
-      },1000)
+      let indexTargetPage = this.pages.indexOf(page);
 
+      const offset = indexTargetPage * -100;
+      const pagesContainer = document.getElementById('pages-container');
+
+      if (pagesContainer) {
+        pagesContainer.style.transform = `translateX(${offset}%)`;
+      }
+
+
+      this.oldPage = page;
+      if (this.currentPage == 'contact') {
+        setTimeout(() => {
+          document.getElementById('right-bar')?.classList.remove('d-none');
+        }, 1000);
+
+      } else {
+        setTimeout(() => {
+          document.getElementById('right-bar')?.classList.add('d-none');
+        }, 1000)
+
+      }
     }
   }
-  
 
   hidePages(page: string) {
     setTimeout(() => {
@@ -73,6 +79,24 @@ export class AppComponent {
     }, 500)
   }
 
+  showPageViaNavbarResp(): void {
+    if (!this.burgerOpen) {
+      document.getElementById('burger-container')?.classList.add('start-animation');
+      document.getElementById('burger-container')?.classList.remove('close-animation');
+      this.burgerOpen = true;
+    } else {
+      document.getElementById('burger-container')?.classList.add('close-animation');
+      document.getElementById('burger-container')?.classList.remove('start-animation');
+      this.burgerOpen = false;
+    }
+  }
+
+  closeBurger(){
+    document.getElementById('burger-container')?.classList.add('close-animation');
+    document.getElementById('burger-container')?.classList.remove('start-animation');
+    this.burgerOpen = false;
+  }
+
+
 
 }
-

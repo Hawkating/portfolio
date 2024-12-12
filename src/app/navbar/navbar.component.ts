@@ -7,26 +7,10 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-// export class NavbarComponent {
-//   @Output()showPage = new EventEmitter();
-//   @Input()currentPageNav = '';
 
-
-
-//   emitShowPage(targetPage:string){
-//     const pageObj = {
-//       current: this.currentPageNav, // Aktuelle Seite
-//       target: targetPage,          // Zielseite
-//     };
-//     this.showPage.emit(pageObj);   // Event mit dem Objekt auslösen
-//   }
-
-//   setHeadline(){
-//     document.getElementById(this.currentPageNav)?.classList.add('current');
-//   }
-// }
 export class NavbarComponent {
   @Output() showPage = new EventEmitter();
+  @Output() openBurger = new EventEmitter();
   private _currentPageNav = '';
   whyme = {
     en: 'Why me',
@@ -47,11 +31,17 @@ export class NavbarComponent {
     this.showPage.emit(pageObj);
   }
 
+
   setHeadline() {
-    document.getElementById('whyme')?.classList.remove('current');
-    document.getElementById('skills')?.classList.remove('current');
-    document.getElementById('mywork')?.classList.remove('current');
-    document.getElementById('contact')?.classList.remove('current');
-    document.getElementById(this._currentPageNav)?.classList.add('current');
+console.log(this._currentPageNav);
+    document.getElementById('whyme-nav')?.classList.remove('current');
+    document.getElementById('skills-nav')?.classList.remove('current');
+    document.getElementById('mywork-nav')?.classList.remove('current');
+    document.getElementById('contact-nav')?.classList.remove('current');
+    document.getElementById(this._currentPageNav + '-nav')?.classList.add('current');
   }
+
+ emitOpenBurgerMenu(){
+this.openBurger.emit();
+}
 }

@@ -15,7 +15,7 @@ export class ProjectcardComponent {
       name: 'Join',
       about: 'This project was ',
       technologies: 'HTML, CSS, JavaScript, Firebase, GIT',
-      learning: '',
+      learning: 'a lot',
       image: '../../assets/img/join.png',
       github: 'http://www.google.de',
       test: 'https://join-327.developerakademie.net/login.html'
@@ -42,6 +42,7 @@ export class ProjectcardComponent {
     },
   ];
   @Input()indexOfItem:number = 0;
+
   item: Card = this.contentForCard[this.indexOfItem];
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -50,6 +51,8 @@ export class ProjectcardComponent {
     }
 
 }
+
+
 }
 
 class Card {

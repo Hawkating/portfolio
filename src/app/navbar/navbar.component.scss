@@ -18,7 +18,8 @@ nav {
         width: 160px;
         height: 160px;
         filter: brightness(0.7);
-        &:hover{
+
+        &:hover {
             cursor: pointer;
         }
     }
@@ -43,6 +44,11 @@ nav {
                 color: white;
             }
         }
+
+    }
+
+    .burger {
+        display: none;
     }
 
     .current {
@@ -55,8 +61,45 @@ nav {
             cursor: default !important;
         }
     }
+}
 
-    .no-wrap {
-        white-space: nowrap;
-      }
+
+@media(max-width: 800px) {
+    nav {
+        top: 0;
+        height: 73px !important;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .links-area {
+            display: none !important;
+        }
+
+        .home {
+            margin-left: 32px;
+
+            img {
+                height: 80px;
+                width: auto;
+                margin-bottom: 12px;
+            }
+        }
+
+        .burger {
+            display: block;
+            margin-right: 32px;
+
+            img {
+                height: 40px;
+                width: auto;
+            }
+        }
+    }
+}
+
+
+.no-wrap {
+    white-space: nowrap;
 }
