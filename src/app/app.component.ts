@@ -11,11 +11,13 @@ import { MyworkComponent } from "./mywork/mywork.component";
 import { ProjectcardComponent } from "./projectcard/projectcard.component";
 import { ContactComponent } from "./contact/contact.component";
 import { RightBarComponent } from './right-bar/right-bar.component';
+import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
+import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent, RightBarComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent, RightBarComponent, LegalNoticeComponent, PrivacyPolicyComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -52,8 +54,6 @@ export class AppComponent {
       if (pagesContainer) {
         pagesContainer.style.transform = `translateX(${offset}%)`;
       }
-
-
       this.oldPage = page;
       if (this.currentPage == 'contact') {
         setTimeout(() => {
@@ -91,12 +91,20 @@ export class AppComponent {
     }
   }
 
-  closeBurger(){
+  closeBurger() {
     document.getElementById('burger-container')?.classList.add('close-animation');
     document.getElementById('burger-container')?.classList.remove('start-animation');
     this.burgerOpen = false;
   }
 
+  showDialog(id: string) {
+    console.log("legal notice test");
+    document.getElementById(id)?.classList.remove('d-none');
+  }
+
+  closeDialog(id: string) {
+    document.getElementById(id)?.classList.add('d-none');
+  }
 
 
 }

@@ -23,9 +23,14 @@ export class ContactComponent {
   check = false;
 
   @Output() showPage = new EventEmitter();
+  @Output() showDialog = new EventEmitter();
 
   emitShowPage() {
     this.showPage.emit(this.navigateTo);
+  }
+
+  emitShowDialog(id:string) {
+    this.showDialog.emit(id);
   }
 
 

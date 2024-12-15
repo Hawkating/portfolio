@@ -7,6 +7,8 @@
 </div>
 <app-socials [currentPageNav]="currentPage" id="socials-bar" class="socials"></app-socials>
 <app-right-bar [currentPageNav]="currentPage" id="right-bar" class="d-none"></app-right-bar>
+<app-legal-notice class="d-none" id="legal-notice" (closeDialog)="closeDialog($event)"></app-legal-notice>
+<app-privacy-policy class="d-none" id="privacy-policy" (closeDialog)="closeDialog($event)"></app-privacy-policy>
 <div class="content-wrapper">
   <div id="pages-container">
     <app-atf (showPage)="showPageViaArrow($event)" id="atf" class="component"></app-atf>
@@ -16,6 +18,6 @@
       class="component"></app-skills>
     <app-mywork (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="mywork"
       class="component"></app-mywork>
-    <app-contact (showPage)="showPageViaArrow($event)" id="contact" class="component"></app-contact>
+    <app-contact (showPage)="showPageViaArrow($event)" (showDialog)="showDialog($event)" id="contact" class="component"></app-contact>
   </div>
 </div>

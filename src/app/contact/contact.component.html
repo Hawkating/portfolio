@@ -30,9 +30,9 @@
             <div class="contact"><img src="../../assets/icons/phone.svg"><span> Tel: <a>0160 / 7534434</a></span></div>
             <app-arrow (click)="emitShowPage()" class="navigation" [navigateTo]="navigateTo"></app-arrow>
             <br><br>
-            <a>legal notice</a>
+            <a (click)="emitShowDialog('legal-notice')" class="dialog-button">legal notice</a>
             <br><br>
-            <a>privacy policy</a>
+            <a (click)="emitShowDialog('privacy-policy')" class="dialog-button">privacy policy</a>
             <br><br>
             <p>© Jan Bruchwalski 2024</p>
         </div>

@@ -61,7 +61,7 @@ nav {
         }
     }
 
-    .links-area {
+    .burger-container {
         display: flex;
         flex-direction: row-reverse;
         transform: rotate(270deg);
@@ -140,6 +140,11 @@ nav {
     color: #4A4A4A;
 
     a {
+        color: #4A4A4A;
+        font-size: 18px;
+        font-weight: 400px;
+        text-decoration: none;
+        transition: color 0.15s ease;
         &:hover {
             cursor: pointer;
             color: white;
