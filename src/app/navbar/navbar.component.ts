@@ -14,7 +14,7 @@ export class NavbarComponent {
   private _currentPageNav = '';
   whyme = {
     en: 'Why me',
-    de: 'Why me'
+    de: 'Warum ich'
   }
 
   @Input()

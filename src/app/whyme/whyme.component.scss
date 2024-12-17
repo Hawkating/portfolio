@@ -198,9 +198,11 @@ section {
       @media (max-width: 800px) {
         background-size: 100vh 500vw;
         background-image: linear-gradient(190deg, #010101, #252525, #252525, #010101); 
-        background-position: 0 -100vh;
+        background-position: 0 -100vh;            
+        overflow-x: hidden;
 
         .content {
+            width: 75vw;
             margin-left: 24px;
             margin-right: 24px;
             padding-top: 0px;

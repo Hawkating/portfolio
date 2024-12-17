@@ -1,42 +1,45 @@
 <section>
-    <app-right-bar class="d-none"></app-right-bar>
+    <app-right-bar class="d-none right-bar"></app-right-bar>
     <div class="content">
         <h1>Contact me</h1>
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-            <input [(ngModel)]="contactData.name" name="name" class="input-field" placeholder="Your name" required>
-            <input [(ngModel)]="contactData.mail" name="mail" class="input-field" placeholder="Your e-mail" required
-                pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$">
-            <textarea [(ngModel)]="contactData.message" name="message" placeholder="Your message" required></textarea>
-            <div class="agreement">
-                <input class="checkbox" type="checkbox" [(ngModel)]="check" name="check" required>
-                <p>I've read the <a>privacy policy</a> and agree to the processing of my data as outlined.</p>
+        <div class="content-wrapper">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <input [(ngModel)]="contactData.name" name="name" class="input-field" placeholder="Your name" required>
+                <input [(ngModel)]="contactData.mail" name="mail" class="input-field" placeholder="Your e-mail" required
+                    pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$">
+                <textarea [(ngModel)]="contactData.message" name="message" placeholder="Your message"
+                    required></textarea>
+                <div class="agreement">
+                    <input class="checkbox" type="checkbox" [(ngModel)]="check" name="check" required>
+                    <p>I've read the <a (click)="emitShowDialog('privacy-policy')">privacy policy</a> and agree to the processing of my data as outlined.</p>
+                </div>
+                <div>
+                    <button>Send</button>
+                </div>
+            </form>
+            <div class="work-together">
+                <span>Let us work together</span>
+                <br>
+                <br>
+                <p>
+                    Whether your project involves developing a new application, upgrading existing systems,
+                    or implementing robust cybersecurity measures,
+                    I have the technical acumen and problem-solving skills to ensure successful outcomes.</p>
+                <br>
+                <br>
+                <div class="contact"><img src="../../assets/icons/mail.svg"><span> E-Mail:
+                        <a>j.bruchwalski&#64;web.de</a></span></div>
+                <div class="contact"><img src="../../assets/icons/phone.svg"><span> Tel: <a>0160 / 7534434</a></span>
+                </div>
+                <app-arrow (click)="emitShowPage()" class="navigation" [navigateTo]="navigateTo"></app-arrow>
+                <br><br>
+                <a (click)="emitShowDialog('legal-notice')" class="dialog-button">legal notice</a>
+                <br><br>
+                <a (click)="emitShowDialog('privacy-policy')" class="dialog-button">privacy policy</a>
+                <br><br>
+                <p class="copyright">© Jan Bruchwalski 2024</p>
             </div>
-            <div>
-                <button>Send</button>
-            </div>
-        </form>
-        <div class="work-together">
-            <span>Let us work together</span>
-            <br>
-            <br>
-            <p>
-                Whether your project involves developing a new application, upgrading existing systems,
-                or implementing robust cybersecurity measures,
-                I have the technical acumen and problem-solving skills to ensure successful outcomes.</p>
-            <br>
-            <br>
-            <div class="contact"><img src="../../assets/icons/mail.svg"><span> E-Mail:
-                    <a>j.bruchwalski&#64;web.de</a></span></div>
-            <div class="contact"><img src="../../assets/icons/phone.svg"><span> Tel: <a>0160 / 7534434</a></span></div>
-            <app-arrow (click)="emitShowPage()" class="navigation" [navigateTo]="navigateTo"></app-arrow>
-            <br><br>
-            <a (click)="emitShowDialog('legal-notice')" class="dialog-button">legal notice</a>
-            <br><br>
-            <a (click)="emitShowDialog('privacy-policy')" class="dialog-button">privacy policy</a>
-            <br><br>
-            <p>© Jan Bruchwalski 2024</p>
         </div>
-
     </div>
 
 

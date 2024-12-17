@@ -13,11 +13,12 @@ import { ContactComponent } from "./contact/contact.component";
 import { RightBarComponent } from './right-bar/right-bar.component';
 import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent, RightBarComponent, LegalNoticeComponent, PrivacyPolicyComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent, RightBarComponent, LegalNoticeComponent, PrivacyPolicyComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -66,6 +67,13 @@ export class AppComponent {
         }, 1000)
 
       }
+    }
+  }
+
+  goToContact(): void {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 

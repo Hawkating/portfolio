@@ -34,6 +34,9 @@ section {
     align-items: center;
   }
 
+  #projects-resp {
+    display: none;
+  }
 
 
   .preview-container {
@@ -61,7 +64,7 @@ section {
   }
 
 
-  @media(max-width: 1600px){
+  @media(max-width: 1600px) {
     .project-container {
       display: flex;
       flex-direction: column;
@@ -84,12 +87,10 @@ section {
     }
 
   }
-  
 
-  
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     background-size: 100vh 500vw;
-    background-image: linear-gradient(190deg, #010101, #252525, #252525, #010101); 
+    background-image: linear-gradient(190deg, #010101, #252525, #252525, #010101);
     background-position: 0 -300vh;
 
     .content {
@@ -99,30 +100,30 @@ section {
       top: 0%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-  }
+      align-items: start;
+    }
 
-  h1 {
+    h1 {
       font-family: 'quantico-bold';
       font-size: 32px;
       font-weight: 400;
       color: transparent;
       -webkit-text-stroke-width: 2.0px;
       -webkit-text-stroke-color: $primary-color;
-      writing-mode:horizontal-tb ;
+      writing-mode: horizontal-tb;
       rotate: 0deg;
       margin-left: 0px;
       margin-right: 0px;
       position: relative;
       top: 0px;
-  }
+    }
 
-  .navigation{
+    .navigation {
       display: none;
-  }
+    }
   }
 
-  @media(max-width: 1040px){
+  @media(max-width: 1040px) {
     .preview-container {
       padding-top: 16px;
       padding-bottom: 16px;
@@ -139,24 +140,43 @@ section {
     }
   }
 
-
   
-  .start-animation{
+  @media(max-width: 500px) {
+    height: auto;
+    min-height: 100vh;
+
+    .preview-container {
+      display: none !important;
+    }
+
+    #project-container {
+      display: none !important;
+    }
+
+    #projects-resp {
+      display: block;
+    }
+  }
+
+
+
+  .start-animation {
     opacity: 0;
     transform: scale(0.8);
     animation: fadeInScale 1s ease-out forwards;
-}
+  }
 
-@keyframes fadeInScale {
-  0% {
+  @keyframes fadeInScale {
+    0% {
       opacity: 0;
       transform: scale(0.8);
-  }
-  100% {
+    }
+
+    100% {
       opacity: 1;
       transform: scale(1);
+    }
   }
-}
 
 }
 
@@ -168,4 +188,3 @@ section {
   top: 90%;
   right: 0 !important;
 }
-

@@ -18,6 +18,11 @@ section {
         color: white;
     }
 
+    .content-wrapper {
+        display: flex;
+        align-items: start;
+    }
+
     h1 {
         font-family: 'quantico-bold';
         font-size: 54px;
@@ -163,12 +168,87 @@ section {
     //     background-image: linear-gradient(10deg, #010101, #252525, #252525, #010101); 
     //     background-position: 0 -400vh;
     //   }
-      
-      
-      @media (max-width: 800px) {
+
+    @media(max-width: 1140px) {
+
+        form {
+            width: 200px;
+        }
+
+        .work-together {
+            margin-right: 12px !important;
+            margin-left: 40px;
+
+        }
+
+        .input-field {
+            width: 200px !important;
+        }
+
+        textarea {
+            width: 200px !important;
+        }
+
+        .agreement {
+            p {
+                width: 200px;
+            }
+        }
+
+    }
+
+    @media (max-width: 800px) {
         background-size: 100vh 500vw;
-        background-image: linear-gradient(190deg, #010101, #252525, #252525, #010101); 
+        background-image: linear-gradient(190deg, #010101, #252525, #252525, #010101);
         background-position: 0 -400vh;
+
+        form {
+            margin-top: -120px;
+            gap: 12px;
+        }
+
+        .agreement {
+            display: flex;
+            width: 75vw !important;
+            height: 80px;
+            color: $primary-color;
+        }
+
+
+        .content-wrapper {
+            flex-direction: column-reverse;
+            // justify-content: left;
+            // align-items: flex-start;
+        }
+
+        .work-together {
+            text-align: start;
+            margin-right: 10px;
+            margin-left: 0px;
+            .dialog-button,
+            .copyright {
+                display: none;
+            }
+        }
+
+        .contact {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+
+        .input-field {
+            width: 75vw !important;
+        }
+
+        textarea {
+            width: 75vw !important;
+            height: 10vh !important;
+        }
 
         .content {
             margin-left: 24px;
@@ -187,7 +267,7 @@ section {
             color: transparent;
             -webkit-text-stroke-width: 2.0px;
             -webkit-text-stroke-color: $primary-color;
-            writing-mode:horizontal-tb ;
+            writing-mode: horizontal-tb;
             rotate: 0deg;
             margin-left: 0px;
             margin-right: 0px;
@@ -195,10 +275,12 @@ section {
             top: 0px;
         }
 
-        .navigation{
+        .navigation {
             display: none;
         }
-      }
+
+
+    }
 }
 
 
@@ -219,9 +301,9 @@ section {
     gap: 8px;
 }
 
-.dialog-button{
-    
-    &:hover{
+.dialog-button {
+
+    &:hover {
         cursor: pointer;
         text-decoration: underline;
     }

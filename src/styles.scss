@@ -21,4 +21,33 @@ $primary-color: #B5E93B;
     font-family: 'quantico';
     scroll-behavior: smooth;
 }
- 
+
+
+
+// body {
+//     --sb-track-color: #232E33;
+//     --sb-thumb-color: #b5e93b;
+//     --sb-size: 2px;
+//   }
+  
+//   body::-webkit-scrollbar {
+//     width: var(--sb-size)
+//   }
+  
+//   body::-webkit-scrollbar-track {
+//     background: var(--sb-track-color);
+//     border-radius: 1px;
+//   }
+  
+//   body::-webkit-scrollbar-thumb {
+//     background: var(--sb-thumb-color);
+//     border-radius: 1px;
+    
+//   }
+  
+//   @supports not selector(::-webkit-scrollbar) {
+//     body {
+//       scrollbar-color: var(--sb-thumb-color)
+//                        var(--sb-track-color);
+//     }
+//   }

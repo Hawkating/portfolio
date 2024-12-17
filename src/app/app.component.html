@@ -1,6 +1,7 @@
-<app-navbar [currentPageNav]="currentPage" (showPage)="showPageViaNavbar($event)" (openBurger)="showPageViaNavbarResp()" ></app-navbar>
+<app-navbar [currentPageNav]="currentPage" (showPage)="showPageViaNavbar($event)"
+  (openBurger)="showPageViaNavbarResp()"></app-navbar>
 <div class="burger-container" id="burger-container">
-  <a id="whyme-resp" href="#whyme" (click)="closeBurger()">why me</a>
+  <a id="whyme-resp" href="#whyme" (click)="closeBurger()">Why me</a>
   <a id="skills-resp" href="#skills" (click)="closeBurger()">Skills</a>
   <a id="mywork-resp" href="#mywork" (click)="closeBurger()">My&nbsp;Work</a>
   <a id="contact-resp" href="#contact" (click)="closeBurger()">Contact</a>
@@ -18,6 +19,9 @@
       class="component"></app-skills>
     <app-mywork (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="mywork"
       class="component"></app-mywork>
-    <app-contact (showPage)="showPageViaArrow($event)" (showDialog)="showDialog($event)" id="contact" class="component"></app-contact>
+    <app-contact (showPage)="showPageViaArrow($event)" (showDialog)="showDialog($event)" id="contact"
+      class="component"></app-contact>
+    <app-footer (showDialog)="showDialog($event)" (goToContact)="goToContact()"></app-footer>
+
   </div>
 </div>

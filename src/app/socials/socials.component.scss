@@ -43,7 +43,8 @@
     }
     
     @media(max-width: 800px){
-        display: none;
+        position: relative;
+        margin-bottom: 40px;
     }
 }
 

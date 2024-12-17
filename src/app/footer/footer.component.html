@@ -1,0 +1,16 @@
+<section>
+    <app-arrow class="navigation" (click)="emitGoToContact()"></app-arrow>
+    <app-socials class="socials"></app-socials>
+    <div class="size-helper">
+
+    </div>
+    <div class="footer">
+        <img src="../../assets/img/Logo.png">
+        <p class="copyright">© Jan Bruchwalski 2024</p>
+        <div class="dialogs-container">
+          <div> <a (click)="emitShowDialog('legal-notice')" class="dialog-button">legal notice</a></div>
+          <div>  <a (click)="emitShowDialog('privacy-policy')" class="dialog-button">privacy policy</a>  </div>
+        </div>
+    </div>
+
+</section>

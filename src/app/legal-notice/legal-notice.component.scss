@@ -18,6 +18,19 @@
     border-radius: 30px;
 
 }
+.dialog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: white;
+    gap: 24px;
+}
+.legal-notice-content{
+    margin-left: 24px;
+    color: white;
+}
 
 @keyframes slideIn {
     0% {
