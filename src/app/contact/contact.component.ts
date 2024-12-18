@@ -65,21 +65,23 @@ export class ContactComponent {
    * @param ngForm 
    */
   onSubmit(ngForm: NgForm) {
-      if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-        this.http.post(this.post.endPoint, this.post.body(this.contactData))
-          .subscribe({
-            next: (response) => {
-              ngForm.resetForm();
-            },
-            error: (error) => {
-              console.error(error);
-            },
-            complete: () => console.info('send post complete'),
-          });
-      } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-        ngForm.resetForm();
-      }
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+      this.emitShowDialog("userfeedback");
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      ngForm.resetForm();
+      this.emitShowDialog("userfeedback");
     }
   }
+}
 
 

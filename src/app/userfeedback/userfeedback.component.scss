@@ -1,0 +1,45 @@
+.dialog-container {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    right: 0;
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.dialog {
+    background-image: linear-gradient(100deg, rgba(51, 62, 27, 1), rgba(65, 76, 41, 1));
+    height: 30%;
+    width: 80%;
+    border-radius: 30px;
+
+}
+.dialog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: white;
+    gap: 24px;
+}
+.legal-notice-content{
+    margin-left: 24px;
+    color: white;
+}
+
+@keyframes slideIn {
+    0% {
+        // top: 200vh;
+        opacity: 0;
+    }
+
+    100% {
+        // top: 0;
+        opacity: 1;
+    }
+}

@@ -14,11 +14,12 @@ import { RightBarComponent } from './right-bar/right-bar.component';
 import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 import { FooterComponent } from "./footer/footer.component";
+import { UserfeedbackComponent } from "./userfeedback/userfeedback.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent, RightBarComponent, LegalNoticeComponent, PrivacyPolicyComponent, FooterComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent, RightBarComponent, LegalNoticeComponent, PrivacyPolicyComponent, FooterComponent, UserfeedbackComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
