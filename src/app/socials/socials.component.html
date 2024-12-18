@@ -2,17 +2,17 @@
     'fade-in': _currentPageNav !== 'contact',
     'fade-out': _currentPageNav === 'contact'
   }" [ngStyle]="{'animation-delay': _currentPageNav !== 'contact' ? '1s' : '0s'}">
-    <div id="socials-bar"   >
-        <a href="mailto:j.bruchwalski@web.de"><img [src]="iconMailSrc" alt="Mail-Icon" (mouseenter)="onMouseEnter('mail')"
-                (mouseleave)="onMouseLeave('mail')"></a>
-        <a href="https://linkedin.com/" target="_blank"><img [src]="iconLinkedinSrc" alt="LinkedIn-Icon" (mouseenter)="onMouseEnter('linkedin')"
-                (mouseleave)="onMouseLeave('linkedin')"></a>
-        <a href="https://github.com/Hawkating" target="blank"><img [src]="iconGithubSrc" alt="Github-Icon" (mouseenter)="onMouseEnter('github')"
-                (mouseleave)="onMouseLeave('github')"></a>
+    <div id="socials-bar">
+        <a href="mailto:j.bruchwalski@web.de"><img [src]="iconMailSrc" alt="Mail-Icon"
+                (mouseenter)="onMouseEnter('mail')" (mouseleave)="onMouseLeave('mail')"></a>
+        <a href="https://linkedin.com/" target="_blank"><img [src]="iconLinkedinSrc" alt="LinkedIn-Icon"
+                (mouseenter)="onMouseEnter('linkedin')" (mouseleave)="onMouseLeave('linkedin')"></a>
+        <a href="https://github.com/Hawkating" target="blank"><img [src]="iconGithubSrc" alt="Github-Icon"
+                (mouseenter)="onMouseEnter('github')" (mouseleave)="onMouseLeave('github')"></a>
     </div>
     <div class="language-switch">
-        <p class="language">DE</p>
+        <p class="language" (click)="setLanguage('de')">DE</p>
         <p class="choose">|</p>
-        <p class="language">EN</p>
+        <p class="language" (click)="setLanguage('en')">EN</p>
     </div>
 </div>

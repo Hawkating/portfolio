@@ -15,9 +15,11 @@
     scroll-margin-top: 100px;
 }
 
-#mywork{
-    height: 200vh !important;
+#mywork, #contact, #skills, #footer{
+    height: auto !important;
 }
+
+
 
 .d-none {
     display: none;

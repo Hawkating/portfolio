@@ -29,29 +29,42 @@ export class AppComponent {
   currentPage: string = 'atf';
   burgerOpen = false;
 
+  /**
+   * Behaviour via Navbar-Scrolling
+   * @param page 
+   */
   showPageViaNavbar(page: { target: string; current: string }): void {
     this.currentPage = page.target;
     this.showPage(page.target);
-
   }
 
-
+  /**
+   * scrolls to the next component after clicking arrow-navigator
+   * @param page 
+   */
   showPageViaArrow(page: string): void {
     this.currentPage = page;
     console.log(this.currentPage)
     this.showPage(page);
   }
 
+  /**
+   * Scrolls to choosen component. Behaviour depending on window-width
+   * @param page 
+   */
   showPage(page: string) {
     if (window.innerWidth < 800) {
-      let element = document.getElementById('atf');
-      element?.scrollIntoView();
+      if (page == "contact") {
+        let element = document.getElementById('contact');
+        element?.scrollIntoView();
+      } else {
+        let element = document.getElementById('atf');
+        element?.scrollIntoView();
+      }
     } else {
       let indexTargetPage = this.pages.indexOf(page);
-
       const offset = indexTargetPage * -100;
       const pagesContainer = document.getElementById('pages-container');
-
       if (pagesContainer) {
         pagesContainer.style.transform = `translateX(${offset}%)`;
       }
@@ -60,16 +73,17 @@ export class AppComponent {
         setTimeout(() => {
           document.getElementById('right-bar')?.classList.remove('d-none');
         }, 1000);
-
       } else {
         setTimeout(() => {
           document.getElementById('right-bar')?.classList.add('d-none');
         }, 1000)
-
       }
     }
   }
 
+  /**
+   * scrolls to contact-component
+   */
   goToContact(): void {
     const contactElement = document.getElementById('contact');
     if (contactElement) {
@@ -77,6 +91,9 @@ export class AppComponent {
     }
   }
 
+  /**
+   * hides pages after scrolling for viewarea
+   */
   hidePages(page: string) {
     setTimeout(() => {
       for (let i = 0; i < this.pages.length; i++) {
@@ -87,6 +104,9 @@ export class AppComponent {
     }, 500)
   }
 
+  /**
+   * opens or closes the burger Menu
+   */
   showPageViaNavbarResp(): void {
     if (!this.burgerOpen) {
       document.getElementById('burger-container')?.classList.add('start-animation');
@@ -99,20 +119,29 @@ export class AppComponent {
     }
   }
 
+  /**
+   * closes the Burger-Menu
+   */
   closeBurger() {
     document.getElementById('burger-container')?.classList.add('close-animation');
     document.getElementById('burger-container')?.classList.remove('start-animation');
     this.burgerOpen = false;
   }
 
+  /**
+   * opens the dialog
+   * @param id privacy policy or legal notice
+   */
   showDialog(id: string) {
     console.log("legal notice test");
     document.getElementById(id)?.classList.remove('d-none');
   }
 
+  /**
+   * closes the dialog
+   */
   closeDialog(id: string) {
     document.getElementById(id)?.classList.add('d-none');
   }
-
 
 }

@@ -8,9 +8,11 @@
                     <h1>Jan Bruchwalski</h1>
                 </div>
                 <div class="headline-title">
-                    <h2>Frontend Developer</h2>
+                    <h2 *ngIf="language === 'en'">Frontend Developer</h2>
+                    <h2 *ngIf="language === 'de'">Frontend-Entwickler</h2>
                 </div>
             </div>
         </div>
     </div>
+    
 </section>

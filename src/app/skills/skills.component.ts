@@ -1,6 +1,12 @@
+class Skill {
+  path: string = '';
+  name: string = '';
+}
+
 import { CommonModule } from '@angular/common';
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { ArrowComponent } from "../arrow/arrow.component";
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,7 +15,9 @@ import { ArrowComponent } from "../arrow/arrow.component";
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
+
 export class SkillsComponent {
+  language: string = 'en';
   skillsFrontend: Skill[] = [
     {
       path: '../../assets/skills/frontend/Angular.svg',
@@ -52,7 +60,8 @@ export class SkillsComponent {
       name: 'Material Design'
     },
   ];
-  navigateTo:string = 'mywork';
+  navigateTo: string = 'mywork';
+
   @Input() set animationObserver(value: string) {
     if (value == 'skills') {
       this.observeAnimation();
@@ -60,37 +69,40 @@ export class SkillsComponent {
       this.observeAnimationDelete();
     }
   }
-  constructor() {
-  }
 
-  @Output()showPage = new EventEmitter();
+  @Output() showPage = new EventEmitter();
 
-  emitShowPage(){
-   this.showPage.emit(this.navigateTo);
-  }
-
-  observeAnimation(){
-    const elements = Array.from(document.getElementsByClassName('single-skill'));
-
-    elements.forEach((element) => {
-        element.classList.add('start-animation');
+  constructor(private languageService: LanguageService) {
+    this.languageService.language$.subscribe(lang => {
+      this.language = lang;
     });
   }
 
-  observeAnimationDelete(){
-    const elements = Array.from(document.getElementsByClassName('single-skill'));
+  /**
+  * emits the showPage-Event to navigate to mywork-component
+  */
+  emitShowPage() {
+    this.showPage.emit(this.navigateTo);
+  }
 
+  /**
+   * handles the animation for single-skills if the current page is the skills-component
+   */
+  observeAnimation() {
+    const elements = Array.from(document.getElementsByClassName('single-skill'));
     elements.forEach((element) => {
-        element.classList.remove('start-animation');
+      element.classList.add('start-animation');
     });
   }
 
-
-}
-
-class Skill {
-
-  path: string = '';
-  name: string = '';
+  /**
+   * handles the animation for single-skills if the current page is not the skills-component
+   */
+  observeAnimationDelete() {
+    const elements = Array.from(document.getElementsByClassName('single-skill'));
+    elements.forEach((element) => {
+      element.classList.remove('start-animation');
+    });
+  }
 
 }

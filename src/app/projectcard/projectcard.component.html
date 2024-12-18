@@ -6,11 +6,14 @@
     <div class="card-content">
         <div class="first-line">
             <ul class="about list">
-                <li>About the Project</li>
+                <li *ngIf="language === 'en'">About the Project</li>
+                <li *ngIf="language === 'de'">Über das Projekt</li>
                 <br>
-                <p class="help-resize">{{ item.about }}</p>
+                <p class="help-resize" *ngIf="language === 'en'">{{ item.about }}</p>
+                <p class="help-resize" *ngIf="language === 'de'">{{ item.ueber }}</p>
                 <br><br>
-                <li>Technologies I have used </li>
+                <li *ngIf="language === 'en'">Technologies I have used </li>
+                <li *ngIf="language === 'de'">Benutzte Technologien</li>
                 <br>
                 <p class="help-resize">{{ item.technologies }}</p>
                 <br><br>

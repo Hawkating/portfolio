@@ -3,42 +3,30 @@ import { RightBarComponent } from "../right-bar/right-bar.component";
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ArrowComponent } from '../arrow/arrow.component';
+import { LanguageService } from '../language.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [RightBarComponent, FormsModule, ArrowComponent],
+  imports: [RightBarComponent, FormsModule, ArrowComponent, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
+
 export class ContactComponent {
+  language: string = 'en';
   navigateTo: string = 'mywork'
   http = inject(HttpClient);
-
+  check = false;
+  mailTest = false;
   contactData = {
     name: '',
-    mail: '',
+    email: '',
     message: '',
   }
-  check = false;
-
-  @Output() showPage = new EventEmitter();
-  @Output() showDialog = new EventEmitter();
-
-  emitShowPage() {
-    this.showPage.emit(this.navigateTo);
-  }
-
-  emitShowDialog(id:string) {
-    this.showDialog.emit(id);
-  }
-
-
-
-  mailTest = true;
-
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://jan-bruchwalski.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -48,23 +36,50 @@ export class ContactComponent {
     },
   };
 
+  @Output() showPage = new EventEmitter();
+  @Output() showDialog = new EventEmitter();
+
+  constructor(private languageService: LanguageService) {
+    this.languageService.language$.subscribe(lang => {
+      this.language = lang;
+    });
+  }
+
+  /**
+ * emits the showPage-Event to navigate to mywork-component
+ */
+  emitShowPage() {
+    this.showPage.emit(this.navigateTo);
+  }
+
+  /**
+   * emits the showDialog-Event to open the dialog (legal notice or privacy policy)
+   * @param id id for legal notice or privacy policy
+   */
+  emitShowDialog(id: string) {
+    this.showDialog.emit(id);
+  }
+
+  /**
+   * Sumbits the form
+   * @param ngForm 
+   */
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
-      ngForm.resetForm();
+      if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+        this.http.post(this.post.endPoint, this.post.body(this.contactData))
+          .subscribe({
+            next: (response) => {
+              ngForm.resetForm();
+            },
+            error: (error) => {
+              console.error(error);
+            },
+            complete: () => console.info('send post complete'),
+          });
+      } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+        ngForm.resetForm();
+      }
     }
   }
 
-}
+

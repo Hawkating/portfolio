@@ -3,6 +3,7 @@ import { ProjectcardComponent } from '../projectcard/projectcard.component';
 import { CommonModule } from '@angular/common';
 import { ArrowComponent } from "../arrow/arrow.component";
 import { ProjectcardPreviewComponent } from '../projectcard-preview/projectcard-preview.component';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-mywork',
@@ -11,30 +12,46 @@ import { ProjectcardPreviewComponent } from '../projectcard-preview/projectcard-
   templateUrl: './mywork.component.html',
   styleUrl: './mywork.component.scss'
 })
+
 export class MyworkComponent {
+  language: string = 'en';
+  navigateTo = 'contact';
+  projectIndex = 0;
+
   @Input() set animationObserver(value: string) {
     if (value == 'mywork') {
       this.observeAnimation();
-      console.log("drinne")
     } else {
       this.observeAnimationDelete();
     }
   }
-  navigateTo = 'contact';
-  projectIndex = 0;
 
-  @Output()showPage = new EventEmitter();
+  @Output() showPage = new EventEmitter();
 
-  emitShowPage(){
-   this.showPage.emit(this.navigateTo);
+  constructor(private languageService: LanguageService) {
+    this.languageService.language$.subscribe(lang => {
+      this.language = lang;
+    });
   }
 
-  
-observeAnimation(){
-  document.getElementById('project-container')?.classList.add('start-animation');
+  /**
+  * emits the showPage-Event to navigate to contact-component
+  */
+  emitShowPage() {
+    this.showPage.emit(this.navigateTo);
   }
-  
-  observeAnimationDelete(){
+
+  /**
+   * adds the class start-animation to animate the card with scaling and transition
+   */
+  observeAnimation() {
+    document.getElementById('project-container')?.classList.add('start-animation');
+  }
+
+  /**
+   * removes the start-animation class
+   */
+  observeAnimationDelete() {
     document.getElementById('project-container')?.classList.remove('start-animation');
   }
 

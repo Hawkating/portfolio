@@ -9,16 +9,24 @@ import { ArrowComponent } from '../arrow/arrow.component';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
+
 export class FooterComponent {
   @Output() showDialog = new EventEmitter();
   @Output() goToContact = new EventEmitter();
 
-
-  emitShowDialog(id:string) {
+  /**
+ * emits the showDialog-Event to open the dialog (legal notice or privacy policy)
+ * @param id id for legal notice or privacy policy
+ */
+  emitShowDialog(id: string) {
     this.showDialog.emit(id);
   }
 
-  emitGoToContact(){
+  /**
+ * emits the goToContact-Event to navigate back to the last component (contact)
+ */
+  emitGoToContact() {
     this.goToContact.emit();
   }
+  
 }

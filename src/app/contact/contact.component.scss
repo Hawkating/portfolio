@@ -142,6 +142,11 @@ section {
             border-radius: 30px;
             text-align: center;
             float: right;
+
+            &:hover{
+                cursor: pointer;
+                filter: brightness(1.2);
+            }
         }
 
         button:disabled {
@@ -163,11 +168,6 @@ section {
         display: none;
     }
 
-    // @media (orientation: portrait) {
-    //     background-size: 100vw 500vh; 
-    //     background-image: linear-gradient(10deg, #010101, #252525, #252525, #010101); 
-    //     background-position: 0 -400vh;
-    //   }
 
     @media(max-width: 1140px) {
 
@@ -201,7 +201,9 @@ section {
         background-size: 100vh 500vw;
         background-image: linear-gradient(190deg, #010101, #252525, #252525, #010101);
         background-position: 0 -400vh;
-
+        height: auto;
+        min-height: 100vh;
+      
         form {
             margin-top: -120px;
             gap: 12px;
@@ -308,3 +310,16 @@ section {
         text-decoration: underline;
     }
 }
+
+.warning {
+    border: 1px solid red !important;
+
+  }
+  
+  input.warning::placeholder {
+    color: red !important; 
+  }
+
+  textarea.warning::placeholder {
+    color: red !important; 
+  }

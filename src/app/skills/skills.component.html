@@ -3,10 +3,11 @@
     <div class="content">
         <h1>My Skill Set</h1>
         <div class="container">
-            <p class="description">The IT landscape is continuously evolving, with new technologies and methodologies.
+            <p class="description" *ngIf="language === 'en'">The IT landscape is continuously evolving, with new technologies and methodologies.
                 Staying motivated to
                 expand my IT skills requires a strategic approach, a curious mindset, and a commitment to lifelong
                 learning.</p>
+                <p class="description" *ngIf="language === 'de'">Die IT-Landschaft entwickelt sich ständig mit neuen Technologien und Methoden weiter. Um motiviert zu bleiben, seine IT-Kenntnisse zu erweitern, sind ein strategischer Ansatz, eine neugierige Denkweise und die Verpflichtung zum lebenslangen Lernen erforderlich.</p>
             <div class="skill-container">
                 @for (skill of skillsFrontend; track skill.name) {
                 <div class="single-skill" [ngStyle]="{'animation-delay': ($index * 0.1) + 's'}">
@@ -16,8 +17,9 @@
                     <p>{{skill.name}}</p>
                 </div>
                 }
-                <p class="info">I am always happy to learn new technonogies,
+                <p class="info" *ngIf="language === 'en'">I am always happy to learn new technonogies,
                     just tell me what you need.</p>
+                    <p class="info" *ngIf="language === 'de'">Ich freue mich immer Neues zu lernen. Sagen Sie mir einfach, was Sie brauchen.</p>
             </div>
 
         </div>

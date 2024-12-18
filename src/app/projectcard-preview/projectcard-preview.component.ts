@@ -7,10 +7,9 @@ import { Component, Input } from '@angular/core';
   templateUrl: './projectcard-preview.component.html',
   styleUrl: './projectcard-preview.component.scss'
 })
+
 export class ProjectcardPreviewComponent {
   @Input()projectname:string = '';
   @Input()projectpath:string = '';
     
-
-
 }
