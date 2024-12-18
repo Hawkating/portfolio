@@ -1,28 +1,38 @@
-<app-navbar [currentPageNav]="currentPage" (showPage)="showPageViaNavbar($event)"
-  (openBurger)="showPageViaNavbarResp()"></app-navbar>
-<div class="burger-container" id="burger-container">
-  <a id="whyme-resp" href="#whyme" (click)="closeBurger()">Why me</a>
-  <a id="skills-resp" href="#skills" (click)="closeBurger()">Skills</a>
-  <a id="mywork-resp" href="#mywork" (click)="closeBurger()">My&nbsp;Work</a>
-  <a id="contact-resp" href="#contact" (click)="closeBurger()">Contact</a>
-</div>
-<app-socials [currentPageNav]="currentPage" id="socials-bar" class="socials"></app-socials>
-<app-right-bar [currentPageNav]="currentPage" id="right-bar" class="d-none"></app-right-bar>
-<app-legal-notice class="d-none" id="legal-notice" (closeDialog)="closeDialog($event)"></app-legal-notice>
-<app-privacy-policy class="d-none" id="privacy-policy" (closeDialog)="closeDialog($event)"></app-privacy-policy>
-<app-userfeedback class="d-none" id="userfeedback" (closeDialog)="closeDialog($event)"></app-userfeedback>
-<div class="content-wrapper">
-  <div id="pages-container">
-    <app-atf (showPage)="showPageViaArrow($event)" id="atf" class="component"></app-atf>
-    <app-whyme (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="whyme"
-      class="component"></app-whyme>
-    <app-skills (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="skills"
-      class="component"></app-skills>
-    <app-mywork (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="mywork"
-      class="component"></app-mywork>
-    <app-contact (showPage)="showPageViaArrow($event)" (showDialog)="showDialog($event)" id="contact"
-      class="component"></app-contact>
-    <app-footer (showDialog)="showDialog($event)" (goToContact)="goToContact()" id="footer"></app-footer>
-
+<div class="main-div" (wheel)="scrollTo($event)">
+  <app-navbar [currentPageNav]="currentPage" (showPage)="showPageViaNavbar($event)"
+    (openBurger)="showPageViaNavbarResp()"></app-navbar>
+  <div class="burger-container" id="burger-container">
+    <a id="whyme-resp" href="#whyme" (click)="closeBurger()">Why me</a>
+    <a id="skills-resp" href="#skills" (click)="closeBurger()">Skills</a>
+    <a id="mywork-resp" href="#mywork" (click)="closeBurger()">My&nbsp;Work</a>
+    <a id="contact-resp" href="#contact" (click)="closeBurger()">Contact</a>
+    <div class="language-switch">
+      <p class="language" (click)="setLanguage('de')">DE</p>
+      <p class="choose">|</p>
+      <p class="language" (click)="setLanguage('en')">EN</p>
+  </div>
+  </div>
+  <app-socials [currentPageNav]="currentPage" id="socials-bar" class="socials"></app-socials>
+  <app-right-bar [currentPageNav]="currentPage" id="right-bar" class="d-none"></app-right-bar>
+  <app-legal-notice class="d-none" id="legal-notice" (closeDialog)="closeDialog($event)"></app-legal-notice>
+  <app-privacy-policy class="d-none" id="privacy-policy" (closeDialog)="closeDialog($event)"></app-privacy-policy>
+  <app-userfeedback class="d-none" id="userfeedback" (closeDialog)="closeDialog($event)"></app-userfeedback>
+  <div class="content-wrapper">
+    <div id="pages-container">
+      <app-atf (showPage)="showPageViaArrow($event)" id="atf" class="component"></app-atf>
+      <app-whyme (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="whyme"
+        class="component"></app-whyme>
+      <app-skills (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="skills"
+        class="component"></app-skills>
+      <app-mywork (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="mywork"
+        class="component"></app-mywork>
+        <app-mywork2 (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="mywork2"
+        class="component"></app-mywork2>
+        <app-mywork3 (showPage)="showPageViaArrow($event)" [animationObserver]="currentPage" id="mywork3"
+        class="component"></app-mywork3>
+      <app-contact (showPage)="showPageViaArrow($event)" (showDialog)="showDialog($event)" id="contact"
+        class="component"></app-contact>
+      <app-footer (showDialog)="showDialog($event)" (goToContact)="goToContact()" id="footer"></app-footer>
+    </div>
   </div>
 </div>

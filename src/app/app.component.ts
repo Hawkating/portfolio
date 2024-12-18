@@ -15,20 +15,54 @@ import { LegalNoticeComponent } from "./legal-notice/legal-notice.component";
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 import { FooterComponent } from "./footer/footer.component";
 import { UserfeedbackComponent } from "./userfeedback/userfeedback.component";
+import { Mywork2Component } from './mywork2/mywork2.component';
+import { Mywork3Component } from './mywork3/mywork3.component';
+import { LanguageService } from './language.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent, RightBarComponent, LegalNoticeComponent, PrivacyPolicyComponent, FooterComponent, UserfeedbackComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, ArrowComponent, AtfComponent, WhymeComponent, SocialsComponent, SkillsComponent, MyworkComponent, ProjectcardComponent, ContactComponent, RightBarComponent, LegalNoticeComponent, PrivacyPolicyComponent, FooterComponent, UserfeedbackComponent, Mywork2Component, Mywork3Component],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  language = "en";
   title = 'Jan Bruchwalski';
-  pages: string[] = ['atf', 'whyme', 'skills', 'mywork', 'contact'];
+  pages: string[] = ['atf', 'whyme', 'skills', 'mywork', 'mywork2', 'mywork3', 'contact'];
   oldPage: string = 'atf'
   currentPage: string = 'atf';
   burgerOpen = false;
+
+  constructor(private languageService: LanguageService) {
+    this.languageService.language$.subscribe(lang => {
+      this.language = lang;
+    });
+  }
+
+  /**
+   * Scrollbehaviour for mousewheel
+   * @param event 
+   */
+  scrollTo(event: WheelEvent) {
+    if (window.innerWidth > 800) {
+      if (event.deltaY > 0) {
+        let goTo = this.pages.findIndex(page => page === this.currentPage) + 1;
+        if (goTo > 6) {
+          goTo = 6;
+        }
+        this.currentPage = this.pages[goTo];
+        this.showPage(this.pages[goTo]);
+      } else {
+        let goTo = this.pages.findIndex(page => page === this.currentPage) - 1;
+        if (goTo < 0) {
+          goTo = 0;
+        }
+        this.currentPage = this.pages[goTo];
+        this.showPage(this.pages[goTo]);
+      }
+    }
+  }
 
   /**
    * Behaviour via Navbar-Scrolling
@@ -50,9 +84,9 @@ export class AppComponent {
   }
 
   /**
-   * Scrolls to choosen component. Behaviour depending on window-width
-   * @param page 
-   */
+  * Scrolls to choosen component. Behaviour depending on window-width
+  * @param page 
+  */
   showPage(page: string) {
     if (window.innerWidth < 800) {
       if (page == "contact") {
@@ -144,5 +178,13 @@ export class AppComponent {
   closeDialog(id: string) {
     document.getElementById(id)?.classList.add('d-none');
   }
+
+      /**
+   * sets the global language to english or german
+   * @param lang en or de
+   */
+      setLanguage(lang: string) {
+        this.languageService.setLanguage(lang);
+      }
 
 }

@@ -1,83 +1,82 @@
 <section>
-    <app-right-bar class="d-none right-bar"></app-right-bar>
-    <div class="content">
-        <h1>Contact me</h1>
-        <div class="content-wrapper">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-                <input #name="ngModel" [(ngModel)]="contactData.name" name="name" class="input-field"
-                [ngClass]="{'warning': name?.touched && name?.invalid}" required
-                [attr.placeholder]="name?.touched && name?.invalid 
+    <div class="main-container">
+        <app-right-bar class="d-none right-bar"></app-right-bar>
+        <div class="content">
+            <h1>Contact me</h1>
+            <div class="content-wrapper">
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                    <input #name="ngModel" [(ngModel)]="contactData.name" name="name" class="input-field"
+                        [ngClass]="{'warning': name?.touched && name?.invalid}" required [attr.placeholder]="name?.touched && name?.invalid 
                                     ? (language === 'en' ? 'Please enter a name' : 'Bitte Namen eingeben') 
                                     : (language === 'en' ? 'Your name' : 'Ihr Name')">
 
 
-                <input #email="ngModel" [(ngModel)]="contactData.email" name="email" class="input-field"
-                [ngClass]="{'warning': email?.touched && email?.invalid}" required
-                [attr.placeholder]="email?.touched && email?.invalid 
+                    <input #email="ngModel" [(ngModel)]="contactData.email" name="email" class="input-field"
+                        [ngClass]="{'warning': email?.touched && email?.invalid}" required [attr.placeholder]="email?.touched && email?.invalid 
                                     ? (language === 'en' ? 'Please enter a valid email' : 'Bitte E-Mail-Adresse eingeben') 
                                     : (language === 'en' ? 'Your email' : 'Ihre E-Mail')">
 
 
 
-                <textarea #message="ngModel" [(ngModel)]="contactData.message" min-length="1" [ngClass]="{'warning': message?.touched && message?.invalid}"
-                    [attr.placeholder]="message?.touched && message?.invalid 
+                    <textarea #message="ngModel" [(ngModel)]="contactData.message" min-length="1"
+                        [ngClass]="{'warning': message?.touched && message?.invalid}" [attr.placeholder]="message?.touched && message?.invalid 
                     ? (language === 'en' ? 'Please enter a message' : 'Bitte Nachricht eingeben') 
-                    : (language === 'en' ? 'Your message' : 'Ihre Nachricht')" name="message"
-                    required></textarea>
+                    : (language === 'en' ? 'Your message' : 'Ihre Nachricht')" name="message" required></textarea>
 
 
 
-                <div class="agreement">
-                    <input class="checkbox" type="checkbox" [(ngModel)]="check" name="check" required>
-                    <p *ngIf="language === 'en'">I've read the <a (click)="emitShowDialog('privacy-policy')">privacy
-                            policy</a> and agree to the
-                        processing of my data as outlined.</p>
-                    <p *ngIf="language === 'de'">Ich habe die Hinweise zum <a
-                            (click)="emitShowDialog('privacy-policy')">Datenschutz</a> gelesen und bin einverstanden.
-                    </p>
+                    <div class="agreement">
+                        <input class="checkbox" type="checkbox" [(ngModel)]="check" name="check" required>
+                        <p *ngIf="language === 'en'">I've read the <a (click)="emitShowDialog('privacy-policy')">privacy
+                                policy</a> and agree to the
+                            processing of my data as outlined.</p>
+                        <p *ngIf="language === 'de'">Ich habe die Hinweise zum <a
+                                (click)="emitShowDialog('privacy-policy')">Datenschutz</a> gelesen und bin
+                            einverstanden.
+                        </p>
+                    </div>
+                    <div>
+                        <button [disabled]="contactForm.invalid">{{ language === 'en' ? 'send' : 'Senden' }}</button>
+                    </div>
+                </form>
+                <div class="work-together">
+                    <span>{{ language === 'en' ? 'Let us work together' : 'Lassen Sie uns zusammen arbeiten' }}</span>
+                    <br>
+                    <br>
+                    <p *ngIf="language === 'en'">
+                        Whether your project involves developing a new application, upgrading existing systems,
+                        or implementing robust cybersecurity measures,
+                        I have the technical acumen and problem-solving skills to ensure successful outcomes.</p>
+                    <p *ngIf="language === 'de'">
+                        Ganz gleich, ob es sich bei Ihrem Projekt um die Entwicklung einer neuen Anwendung, die
+                        Aktualisierung vorhandener Systeme oder
+                        um die Umsetzung robuster Cybersicherheitsmaßnahmen handelt.
+                        Ich verfüge über den technischen Scharfsinn und die Fähigkeiten zur Problemlösung, um
+                        erfolgreiche
+                        Ergebnisse sicherzustellen.</p>
+                    <br>
+                    <br>
+                    <div class="contact"><img src="../../assets/icons/mail.svg"><span> E-Mail:
+                            <a>j.bruchwalski&#64;web.de</a></span></div>
+                    <div class="contact"><img src="../../assets/icons/phone.svg"><span> Tel: <a>0160 /
+                                7534434</a></span>
+                    </div>
+                    <app-arrow (click)="emitShowPage()" class="navigation" [navigateTo]="navigateTo"></app-arrow>
+                    <br><br>
+                    <a *ngIf="language === 'en'" (click)="emitShowDialog('legal-notice')" class="dialog-button">legal
+                        notice</a>
+                    <a *ngIf="language === 'de'" (click)="emitShowDialog('legal-notice')"
+                        class="dialog-button">Impressum</a>
+                    <br><br>
+                    <a *ngIf="language === 'en'" (click)="emitShowDialog('privacy-policy')"
+                        class="dialog-button">privacy
+                        policy</a>
+                    <a *ngIf="language === 'de'" (click)="emitShowDialog('privacy-policy')"
+                        class="dialog-button">Datenschutz</a>
+                    <br><br>
+                    <p class="copyright">© Jan Bruchwalski 2024</p>
                 </div>
-                <div>
-                    <button *ngIf="language === 'en'">Send</button>
-                    <button *ngIf="language === 'de'">senden</button>
-                </div>
-            </form>
-            <div class="work-together">
-                <span>{{ language === 'en' ? 'Let us work together' : 'Lassen Sie uns zusammen arbeiten' }}</span>
-                <br>
-                <br>
-                <p *ngIf="language === 'en'">
-                    Whether your project involves developing a new application, upgrading existing systems,
-                    or implementing robust cybersecurity measures,
-                    I have the technical acumen and problem-solving skills to ensure successful outcomes.</p>
-                <p *ngIf="language === 'de'">
-                    Ganz gleich, ob es sich bei Ihrem Projekt um die Entwicklung einer neuen Anwendung, die
-                    Aktualisierung vorhandener Systeme oder
-                    um die Umsetzung robuster Cybersicherheitsmaßnahmen handelt.
-                    Ich verfüge über den technischen Scharfsinn und die Fähigkeiten zur Problemlösung, um erfolgreiche
-                    Ergebnisse sicherzustellen.</p>
-                <br>
-                <br>
-                <div class="contact"><img src="../../assets/icons/mail.svg"><span> E-Mail:
-                        <a>j.bruchwalski&#64;web.de</a></span></div>
-                <div class="contact"><img src="../../assets/icons/phone.svg"><span> Tel: <a>0160 / 7534434</a></span>
-                </div>
-                <app-arrow (click)="emitShowPage()" class="navigation" [navigateTo]="navigateTo"></app-arrow>
-                <br><br>
-                <a *ngIf="language === 'en'" (click)="emitShowDialog('legal-notice')" class="dialog-button">legal
-                    notice</a>
-                <a *ngIf="language === 'de'" (click)="emitShowDialog('legal-notice')"
-                    class="dialog-button">Impressum</a>
-                <br><br>
-                <a *ngIf="language === 'en'" (click)="emitShowDialog('privacy-policy')" class="dialog-button">privacy
-                    policy</a>
-                <a *ngIf="language === 'de'" (click)="emitShowDialog('privacy-policy')"
-                    class="dialog-button">Datenschutz</a>
-                <br><br>
-                <p class="copyright">© Jan Bruchwalski 2024</p>
             </div>
         </div>
     </div>
-
-
-
 </section>

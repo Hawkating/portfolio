@@ -6,16 +6,16 @@ import { ProjectcardPreviewComponent } from '../projectcard-preview/projectcard-
 import { LanguageService } from '../language.service';
 
 @Component({
-  selector: 'app-mywork',
+  selector: 'app-mywork2',
   standalone: true,
   imports: [ProjectcardComponent, CommonModule, ArrowComponent, ProjectcardPreviewComponent],
-  templateUrl: './mywork.component.html',
-  styleUrl: './mywork.component.scss'
+  templateUrl: './mywork2.component.html',
+  styleUrl: './mywork2.component.scss'
 })
 
-export class MyworkComponent {
+export class Mywork2Component {
   language: string = 'en';
-  navigateTo = 'mywork2';
+  navigateTo = 'mywork3';
   projectIndex = 0;
 
   @Input() set animationObserver(value: string) {

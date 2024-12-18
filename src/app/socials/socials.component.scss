@@ -58,7 +58,12 @@
             cursor: pointer;
         }
     }
+}
 
+@media(min-width: 1440px) {
+    .top-bar {
+        right: calc((100vw - 1440px) / 2 + 24px);
+    }
 }
 
 

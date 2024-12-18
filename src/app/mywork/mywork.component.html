@@ -1,19 +1,37 @@
 <section>
-    <app-arrow (click)="emitShowPage()" class="navigation" [navigateTo]="navigateTo"></app-arrow>
-    <div class="content">
-        <h1>My Work</h1>
-        <div class="project-container">
-            <app-projectcard id="project-container" [indexOfItem]="projectIndex" class="programm"></app-projectcard>
-            <div class="preview-container">
-                <app-projectcard-preview (click)="projectIndex = 0" [projectname]="'Join'" [projectpath]="'../../assets/img/join.png'" class="preview"></app-projectcard-preview>
-                <app-projectcard-preview (click)="projectIndex = 1" [projectname]="'El Pollo Loco'" [projectpath]="'../../assets/img/polloloco.png'" class="preview"></app-projectcard-preview>
-                <app-projectcard-preview (click)="projectIndex = 2" [projectname]="'DaBubble'" [projectpath]="'../../assets/img/tba.jpg'" class="preview"></app-projectcard-preview>
+    <div class="main-container">
+        <!-- <app-arrow (click)="emitShowPage()" class="navigation" [navigateTo]="navigateTo"></app-arrow> -->
+        <div class="content">
+            <h1>My Work</h1>
+            <div class="project-container">
+                <div class="flex-helper">
+                    <app-projectcard id="project-container" [indexOfItem]="0" class="programm"></app-projectcard>
+                    <app-projectcard id="project-container-tablet" [indexOfItem]="projectIndex" class="programm"></app-projectcard>
+                    
+                    <!-- <app-projectcard id="project-container2" [indexOfItem]="1" class="programm"></app-projectcard>
+                <app-projectcard id="project-container3" [indexOfItem]="2" class="programm"></app-projectcard> -->
+                    <div class="preview-container preview-tablet">
+                    <app-projectcard-preview (click)="projectIndex = 0" [projectname]="'Join'"
+                        [projectpath]="'../../assets/img/join.png'" class="preview"></app-projectcard-preview>
+                    <app-projectcard-preview (click)="projectIndex = 1" [projectname]="'El Pollo Loco'"
+                        [projectpath]="'../../assets/img/polloloco.png'" class="preview"></app-projectcard-preview>
+                    <app-projectcard-preview (click)="projectIndex = 2" [projectname]="'DaBubble'"
+                        [projectpath]="'../../assets/img/tba.jpg'" class="preview"></app-projectcard-preview>
+                </div>
+
+
+                    <div class="carousel-area">
+                        <img src="../../assets/icons/Rectangle-full.svg" alt="rectangle-full">
+                        <img src="../../assets/icons/Rectangle-empty.svg" alt="rectangle-empty">
+                        <img src="../../assets/icons/Rectangle-empty.svg" alt="rectangle-empty">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div id="projects-resp">
-            <app-projectcard [indexOfItem]="3" class="programm"></app-projectcard>
-            <app-projectcard [indexOfItem]="1" class="programm"></app-projectcard>
-            <app-projectcard [indexOfItem]="2" class="programm"></app-projectcard>
+            <div id="projects-resp">
+                <app-projectcard [indexOfItem]="3" class="programm"></app-projectcard>
+                <app-projectcard [indexOfItem]="1" class="programm"></app-projectcard>
+                <app-projectcard [indexOfItem]="2" class="programm"></app-projectcard>
+            </div>
         </div>
     </div>
 </section>

@@ -33,21 +33,21 @@ section {
 
 .navigation {
     transform: rotate(-90deg);
-    margin-top: 200px;
+    margin-top: 300px;
 }
 
-.size-helper{
+.size-helper {
     flex-grow: 1;
 }
 
-.dialogs-container{
-    display:flex;
+.dialogs-container {
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     gap: 32px;
 
-    a{
-        &:hover{
+    a {
+        &:hover {
             color: white;
             cursor: pointer;
         }

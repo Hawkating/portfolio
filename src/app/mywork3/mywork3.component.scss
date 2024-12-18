@@ -3,48 +3,28 @@
 section {
   background-size: 700vw 100vh;
   background-image: linear-gradient(100deg, #010101, #010101, #252525, #252525, #010101);
-  background-position: -300vw 0;
+  background-position: -500vw 0;
   height: 100vh;
-  width: 100vw;
+  width: 100vw ;
   display: flex;
   justify-content: center;
 
   .main-container {
     width: 100vw;
     max-width: 1440px;
-  }
+}
 
-  #project-container-tablet {
-    display: none;
-  }
-
-  .preview-tablet {
-    display: none !important;
-  }
-
-  @media (max-width: 800px) and (min-width: 500px) {
-    #project-container-tablet {
-      display: block;
-    }
-
-    .preview-tablet {
-      display: flex !important;
-    }
-
-    #project-container {
-      display: none;
-    }
-  }
-
-
-
-  .flex-helper {
-    display: flex;
+.flex-helper{
+    display:flex;
     flex-direction: column;
     align-items: center;
-  }
+}
 
-  .programm {
+.size-helper {
+    width: 141px;
+}
+
+  .programm{
     margin-right: 32px;
   }
 
@@ -74,8 +54,8 @@ section {
     align-items: center;
   }
 
-  .carousel-area {
-    img {
+  .carousel-area{
+    img{
       margin-right: 4px;
     }
   }
@@ -166,10 +146,6 @@ section {
 
 
     .navigation {
-      display: none;
-    }
-
-    .carousel-area {
       display: none;
     }
   }

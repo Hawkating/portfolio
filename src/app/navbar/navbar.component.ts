@@ -45,11 +45,15 @@ export class NavbarComponent {
    * handles the headline-classes, to get a stroke-effect on the current component-navigator
    */
   setHeadline() {
+    if (this._currentPageNav == "mywork2" || this._currentPageNav == "mywork3") {
+      this._currentPageNav = "mywork";
+    }
     document.getElementById('whyme-nav')?.classList.remove('current');
     document.getElementById('skills-nav')?.classList.remove('current');
     document.getElementById('mywork-nav')?.classList.remove('current');
     document.getElementById('contact-nav')?.classList.remove('current');
     document.getElementById(this._currentPageNav + '-nav')?.classList.add('current');
+
   }
 
   /**

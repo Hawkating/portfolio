@@ -1,7 +1,4 @@
-<div class="top-bar" [ngClass]="{
-    'fade-in': _currentPageNav !== 'contact',
-    'fade-out': _currentPageNav === 'contact'
-  }" [ngStyle]="{'animation-delay': _currentPageNav !== 'contact' ? '1s' : '0s'}">
+<div class="top-bar fade-in">
     <div id="socials-bar">
         <a href="mailto:j.bruchwalski@web.de"><img [src]="iconMailSrc" alt="Mail-Icon"
                 (mouseenter)="onMouseEnter('mail')" (mouseleave)="onMouseLeave('mail')"></a>
